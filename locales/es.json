@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "title": "Piensa Antes de Actuar",
+    "description": "Recurso educativo sobre cómo la excitación sexual secuestra el juicio racional y cómo los depredadores lo explotan. Aprende a reconocer riesgos como sextorsión, estafas cibernéticas y extorsión.",
+    "og_title": "Piensa Antes de Actuar",
+    "og_description": "La excitación sexual secuestra el juicio racional. Aprende cómo los depredadores lo explotan — y cómo protegerte."
+  },
+  "hero": {
+    "title": "No Decidas Cuando Estés Excitado",
+    "subtitle": "La excitación sexual secuestra el juicio racional. Los depredadores lo saben y lo usan contra ti."
+  },
+  "toc": ["Ciencia", "Riesgos", "Tácticas", "Fases", "Deepfakes", "Protección", "Respuesta", "Legales", "Casos"],
+  "science": {
+    "label": "La Ciencia",
+    "p1": "Cuando estás excitado, la corteza prefrontal es anulada por el sistema límbico. Estudios demuestran que se toman decisiones drásticamente más riesgosas. No es debilidad; es neurología.",
+    "p2": "La brecha empática frío-caliente explica por qué es casi imposible predecir tu comportamiento cuando estás excitado si estás en un estado de calma. Escáneres cerebrales revelan que la excitación sexual activa los mismos circuitos de recompensa que las drogas: tu cerebro literalmente no puede evaluar las consecuencias de la misma manera. Por eso las pre-decisiones importan: define tus límites antes de estar en un estado alterado."
+  },
+  "risks": {
+    "title": "Lo que Arriesgas",
+    "sextortion": {
+      "title": "Sextorsión",
+      "desc": "Chantaje donde amenazan con distribuir imágenes íntimas si no cumples sus demandas.",
+      "extra": "+300% casos según el FBI. Los perpetradores operan desde el extranjero."
+    },
+    "scams": {
+      "title": "Estafas y Phishing",
+      "desc": "Fraude usando contenido sexual como cebo para robar dinero o datos.",
+      "extra": "Variantes: Sugar daddy, webcam falsas, estafas románticas, bots de sexting."
+    },
+    "extortion": {
+      "title": "Extorsión en Línea",
+      "desc": "Exigir algo de valor amenazando con divulgar información sensible.",
+      "extra": "IA amplifica: Deepfakes, clonación de voz, bots automatizados."
+    },
+    "reputation": {
+      "title": "Daño Reputacional",
+      "desc": "El contenido íntimo en línea es permanente.",
+      "extra": "Puede resurgir en verificaciones laborales, admisiones, custodias o campañas políticas."
+    },
+    "financial": {
+      "title": "Ruina Financiera",
+      "desc": "Las víctimas pierden miles de dólares. El ciclo de vergüenza impide denunciar.",
+      "extra": "Victimización repetida: Pagar rara vez detiene las amenazas."
+    },
+    "trauma": {
+      "title": "Trauma Psicológico",
+      "desc": "Las víctimas sufren ansiedad, depresión y TEPT por el acoso sostenido.",
+      "extra": "Estrés crónico: Hipervigilancia, trastornos del sueño, aislamiento social. El daño psicológico a menudo supera la extorsión misma."
+    },
+    "doxing": {
+      "title": "Doxing y Robo de Identidad",
+      "desc": "Información personal filtrada, identidades robadas, cuentas secuestradas.",
+      "extra": "Exposición total: Nombre real, dirección, empleador, familiares. Una vez publicado, rara vez se elimina por completo."
+    },
+    "sabotage": {
+      "title": "Sabotaje de Relaciones",
+      "desc": "Envían contenido a parejas, familiares o empleadores para destruir tu red de apoyo.",
+      "extra": "Aislamiento estratégico: Al atacar a tus seres queridos, eliminan tu apoyo y aumentan tu dependencia."
+    },
+    "nonconsensual": {
+      "title": "Difusión No Consentida",
+      "desc": "Compartir contenido íntimo sin consentimiento es ilegal en muchos países.",
+      "extra": "Abuso basado en imágenes: Incluso el contenido compartido consensualmente puede ser usado después. Leyes en EE.UU., Reino Unido, UE y Latinoamérica penalizan la distribución no consentida. Nunca le debes a nadie una imagen íntima — y compartirla sin consentimiento es un delito."
+    },
+    "consensual_risks": {
+      "title": "Riesgos del Contenido Consensuado",
+      "desc": "Incluso cuando ambas partes consienten, el contenido íntimo puede filtrarse.",
+      "extra": "Pérdida permanente de control: Capturas de pantalla, filtraciones en la nube, malware y exparejas son vectores comunes. Más del 90% de los casos de distribución no consentida comienzan con contenido compartido consensualmente. El medio íntimo más seguro es el que nunca se capturó."
+    },
+    "deepfakes": {
+      "title": "Deepfakes y Contenido Sintético",
+      "desc": "Imágenes y videos generados por IA pueden crear contenido íntimo falso usando tu rostro.",
+      "extra": "+400% incremento en deepfakes pornográficos no consensuales desde 2023. No necesitan fotos íntimas reales — una sola foto de perfil puede ser suficiente para crear contenido falso convincente. Los perpetradores usan esto para amenazar víctimas con contenido que nunca existió. El TAKE IT DOWN Act (EE.UU.) penaliza con hasta 2 años por compartir deepfakes. Canadá (Bill C-16) aumentó la pena máxima a 10 años."
+    },
+    "deepfake_threats": {
+      "title": "Amenazas con Deepfakes",
+      "desc": "Te amenazan con publicar contenido íntimo falso generado por IA si no pagas.",
+      "extra": "Sextorsión sintética: Crean deepfakes usando fotos de tus redes sociales y te amenazan con publicarlos. Voz clonada: Pueden clonar tu voz para hacer llamadas falsas a familiares. Perfiles falsos: Usan caras reales en perfiles falsos para atraer víctimas."
+    }
+  },
+  "tactics": {
+    "title": "Cómo Operan los Depredadores",
+    "label": "Tácticas Comunes",
+    "grooming": "Grooming — Construir confianza por días o semanas antes de escalar.",
+    "reciprocity": "Presión de reciprocidad — Tú enviaste, ahora yo necesito una.",
+    "time_pressure": "Presión de tiempo — Crear urgencia falsa para evitar el pensamiento racional.",
+    "platform_hopping": "Cambio de plataforma — Ir a WhatsApp/Snapchat donde es más difícil rastrear.",
+    "contacts": "Recolectar contactos — Obtener amigos o empleador para aumentar coerción.",
+    "love_bombing": "Love bombing — Atención y afecto abrumadores para crear dependencia emocional.",
+    "emergencies": "Falsas emergencias — Alegar crisis médicas o legales urgentes para evitar el escepticismo.",
+    "apps": "Instalar apps — Pedirte que instales apps que dan acceso remoto a tu dispositivo.",
+    "synthetic": "Generación de contenido sintético — Crear deepfakes usando fotos de tus redes sociales y clonar tu voz."
+  },
+  "playbook": {
+    "title": "El Libro de Jugadas del Depredador",
+    "step1_title": "Contacto Inicial",
+    "step1_desc": "El depredador crea un perfil falso en redes sociales o apps de citas e inicia la conversación. Los perfiles están cuidadosamente elaborados para parecer atractivos y confiables, a menudo usando fotos generadas por IA o robadas.",
+    "step2_title": "Creación de Confianza (Grooming)",
+    "step2_desc": "Construye una relación durante días o semanas usando love bombing, empatía e intereses compartidos. Te lleva a plataformas privadas como WhatsApp, Telegram o Snapchat donde es más difícil rastrear el contenido.",
+    "step3_title": "Elevar la Temperatura",
+    "step3_desc": "La conversación se vuelve sexual. Pide fotos o videos íntimos — a veces enviando los suyos primero para presionar con reciprocidad. Este es el momento crítico donde la excitación compromete más el juicio racional.",
+    "step4_title": "La Trampa se Cierra",
+    "step4_desc": "Una vez que tienen tu contenido, comienzan las amenazas. Exigen dinero, más contenido o ambos — amenazando con exponerte a tu familia, amigos y empleadores. Una cuenta regresiva crea urgencia falsa.",
+    "step5_title": "Explotación o Escape",
+    "step5_desc": "Si pagas, las demandas aumentan y tu información se vende a otros criminales. Este ciclo solo termina cuando bloqueas, denuncias y buscas ayuda. La vergüenza está diseñada — nunca es tu culpa."
+  },
+  "deepfakes_section": {
+    "title": "Deepfakes y Contenido Generado por IA",
+    "flag": "Amenaza Emergente",
+    "desc": "Los deepfakes son videos o imágenes creados con inteligencia artificial que parecen reales pero no lo son. Los depredadores los usan para crear contenido íntimo falso con tu rostro y amenazarte con publicarlo.",
+    "what": "Qué son: Videos o imágenes generados por IA que superponen tu rostro en contenido existente. No necesitan fotos íntimas reales — una sola foto de perfil puede ser suficiente para crear contenido falso convincente.",
+    "how": "Cómo se usan en sextorsión: Crean deepfakes usando fotos de tus redes sociales y te amenazan con publicarlos si no pagas. También clonan tu voz para hacer llamadas falsas a familiares.",
+    "detect": "Cómo detectarlos: Pelo irrevelante o borroso, ojos que no parpadean o tienen color inconsistente, movimientos extraños en el cuello, calidad inconsistente entre rostro y fondo, fundidos o transiciones antinaturales.",
+    "protect": "Cómo protegerse: Reduce fotos públicas con el rostro visible, no compartas fotos con iluminación frontal, usa marcas de agua en fotos personales, verifica identidad en videollamadas en vivo.",
+    "legal": "Marco legal: El TAKE IT DOWN Act (EE.UU., 2025) penaliza con hasta 2 años por compartir deepfakes y 18 meses por amenazar con ellos. Canadá (Bill C-16, 2026) aumentó la pena máxima a 10 años. Reino Unido (Crime and Policing Act 2026) penaliza crear o proveer generadores de deepfakes con hasta 3 años. La UE (Directiva 2024/1385) obliga a criminalizar deepfakes por 2027."
+  },
+  "protect": {
+    "title": "Cómo Protegerte",
+    "pause": "Pausa — Si estás excitado o alterado, no tomes decisiones financieras ni compartas contenido.",
+    "anon": "Anonimato — Mantén rostro, tatuajes y fondos fuera de contenido íntimo.",
+    "accounts": "Cuentas separadas — No vincules perfiles de citas a tus redes reales.",
+    "verify": "Verifica — Busca inversa de imágenes de perfil. Usan fotos robadas.",
+    "paying": "Pagar no sirve — Rara vez eliminan el material — lo venden o reutilizan.",
+    "report": "Denuncia y bloquea — No negocies. Reporta a policía y plataforma.",
+    "support": "Apoyo — Cyber Civil Rights Initiative y Thorn ayudan gratis.",
+    "encrypt": "Cifra todo — Usa Signal o Wickr. Activa mensajes que se autodestruyen.",
+    "credit": "Congela tu crédito — Evita que abran cuentas a tu nombre.",
+    "laws": "Conoce las leyes — Muchos países penalizan compartir imágenes íntimas sin consentimiento.",
+    "identity": "Identidad separada — Usa email, teléfono y redes distintas para citas.",
+    "instinct": "Confía en tu instinto — Si algo se siente mal, probablemente lo está."
+  },
+  "response": {
+    "title": "Si te Sucede a Ti",
+    "step1": "Detén toda comunicación con el perpetrador.",
+    "step2": "No pagues. Pagar financia el delito.",
+    "step3": "Guarda evidencia — capturas, URLs, perfiles.",
+    "step4": "Denuncia en cybertipline.org o ic3.gov (FBI).",
+    "step5": "Contacta a un grupo local de apoyo.",
+    "step6": "Habla con alguien de confianza. El aislamiento es su arma más poderosa."
+  },
+  "legal": {
+    "title": "Antecedentes Legales",
+    "flag": "Leyes contra el Abuso Sexual Digital",
+    "desc": "El abuso sexual basado en imágenes está tipificado como delito en la mayoría de jurisdicciones del mundo. El panorama legal ha evolucionado rápidamente, con muchos países aprobando leyes específicas en lugar de basarse en estatutos generales. Leyes clave:",
+    "us": "Estados Unidos — Take It Down Act (2025): 2–3 años para adultos, hasta 3 años para menores. Ciberacoso federal (18 USC 2261A): hasta 5 años. La mayoría de procesos por sextorsión resultan en 5–20 años según los cargos. La FTC permite reclamar daños civiles.",
+    "uk": "Reino Unido — Online Safety Act 2023: hasta 5 años por compartir imágenes íntimas sin consentimiento. Ofcom puede multar a plataformas hasta £18 millones o 10% de ingresos globales.",
+    "canada": "Canadá — Código Penal s.162.1: hasta 5 años por distribución no consentida. Código Penal s.264.2: hasta 10 años por acoso criminal.",
+    "spain": "España — Art. 197.7 CP: prisión de 3 meses a 1 año, o multa de 6–12 meses por difusión no consentida. Si las imágenes se obtuvieron sin consentimiento: 1–4 años. Con menores o fines lucrativos: hasta 7 años.",
+    "italy": "Italia — Codice Rosso (Legge 69/2019) art. 612-ter: 1–6 años de prisión por difusión no consentida de imágenes íntimas. Legge 134/2021 aumentó las penas por sextorsión y ciberacoso.",
+    "mexico": "México — Ley Olimpia (federal + todos los estados): 3–6 años más multa de 500–1,000 UMA. Algunos estados (Nuevo León, Jalisco) imponen hasta 12 años.",
+    "argentina": "Argentina — Ley Belén (27.736): 6 meses a 2 años por difusión de imágenes íntimas. Amenazas: 3 meses a 1 año. Extorsión (art. 169 CP): 3–8 años.",
+    "chile": "Chile — Art. 161-B CP: prisión por extorsión con imágenes íntimas. Art. 161-C: grabación/difusión de imágenes íntimas en lugares públicos. Ley 21.675 amplió las protecciones.",
+    "colombia": "Colombia — Ley 2064 (proyecto): 4–6 años más multa de 50–100 SMLMV. Art. 244 CP (extorsión): 16–24 años.",
+    "peru": "Perú — Art. 153 CP (extorsión): 10–15 años, hasta cadena perpetua con agravantes. Ley 31814 amplió protecciones contra violencia digital.",
+    "international": "Internacional — El Convenio de Estambul (Consejo de Europa) y el Convenio de Budapest sobre Ciberdelincuencia ofrecen marcos transfronterizos para el enjuiciamiento y la asistencia legal mutua.",
+    "deepfakes": "Deepfakes — TAKE IT DOWN Act (EE.UU., 2025): hasta 2 años por compartir deepfakes, 18 meses por amenazar con ellos. Bill C-16 (Canadá, 2026): máxima de 10 años. Crime and Policing Act 2026 (RU): hasta 3 años por crear/proveer generadores. Directiva UE 2024/1385: debe criminalizarse para 2027. 61 reguladores globales emitieron declaración conjunta (2026).",
+    "rights": "Tus derechos: Las víctimas tienen derecho a presentar denuncias penales, solicitar la eliminación del contenido, obtener órdenes de restricción y reclamar daños civiles. Muchos países ofrecen opciones de denuncia anónima y procesos de eliminación expeditados. La ley está de tu lado.",
+    "important": "Importante: Las leyes varían según la jurisdicción. Si eres víctima, contacta a un abogado local o una organización de apoyo para conocer las protecciones específicas en tu país o estado."
+  },
+  "testimonials": {
+    "title": "Historias Reales",
+    "s1_badge": "Activista",
+    "s1_quote": "Tenía 18 años cuando mi exnovio difundió un video íntimo que grabamos juntos. Se volvió viral en mi pueblo. Cuando intenté denunciar, me dijeron que no existía una ley que protegiera a las víctimas. Toqué fondo, intenté suicidarme tres veces. Pero con otras mujeres redactamos la Ley Olimpia en mi cochera. Hoy es ley nacional en México y la revista Time me nombró una de las 100 personas más influyentes del mundo.",
+    "s1_attr": "Olimpia Coral Melo — Huauchinango, Puebla, México",
+    "s1_source": "Fuente: Infobae, 2023",
+    "s1_url": "https://www.infobae.com/sociedad/2023/07/11/olimpia-coral-melo-la-joven-mexicana-que-impulso-la-ley-contra-la-violencia-digital-en-argentina-no-lo-puedes-ver-no-lo-puedes-tocar-no-te-penetran-pero-te-violan/",
+    "s2_badge": "Diputado",
+    "s2_quote": "Durante varios años fui extorsionado por un video íntimo que alguien hackeó cuando tenía 17 años. Me tuvieron secuestrado psicológica y mentalmente. En 2019 decidí hacer público mi caso y presentar una denuncia. Aunque no se encontró a los responsables, me dio libertad. Hoy soy diputado y he presentado iniciativas para tipificar el grooming como delito.",
+    "s2_attr": "Jesús Elizondo — Monterrey, México",
+    "s2_source": "Fuente: Última Fuente, 2025",
+    "s2_url": "https://ultimafuente.com/la-experiencia-de-jesus-elizondo-con-el-grooming-para-prevenir-futuros-sufrimientos/",
+    "s3_badge": "Docente",
+    "s3_quote": "Mi ex pareja difundió un video íntimo que había sido grabado durante nuestra relación. En plena pandemia de 2020, él y su nueva pareja lo viralizaron en redes sociales, grupos de WhatsApp y páginas pornográficas. Hasta mi hijo de 9 años recibió el video. Pero lo denuncié y logré una condena histórica en San Luis: dos años y tres meses de prisión efectiva.",
+    "s3_attr": "Gabriela Fernández Aberastain — San Luis, Argentina",
+    "s3_source": "Fuente: Clarín, 2025",
+    "s3_url": "https://www.clarin.com/sociedad/juicio-historico-sextorsion-san-luis-condenan-prision-efectiva-viralizar-video-hot-ex_0_s1dQieXHRR.html",
+    "s4_badge": "Tallerista",
+    "s4_quote": "A los 15 años, un chico difundió mis fotos íntimas por toda la escuela. Empezaron a extorsionarme y hostigarme en redes. Recibía mensajes de hombres adultos que decían 'tengo esto, si no haces lo que quiero, se lo mando a tu mamá'. Tuve ataques de pánico, problemas de salud mental. A los 18 entendí que no era mi culpa.",
+    "s4_attr": "Catalina Maluendez — Buenos Aires, Argentina",
+    "s4_source": "Fuente: TN, 2026",
+    "s4_url": "https://tn.com.ar/sociedad/2026/02/08/a-los-15-anos-un-chico-difundio-sus-fotos-intimas-fue-hostigada-y-penso-en-matarse-ahora-cuenta-su-calvario/",
+    "s5_badge": "Víctima",
+    "s5_quote": "Entré a una página de contenido para adultos y sin querer pinché un enlace. Al instante me llegó un mensaje de WhatsApp diciendo que había solicitado servicios sexuales y que debía pagar 1.200 euros o mi familia y yo pagaríamos las consecuencias. Me enviaron vídeos de torturas y asesinatos para aterrorizarme. Pagué por miedo, pero las amenazas no pararon. Cuando los bloqueé, fui a denunciar a la Policía. Detuvieron a dos hombres en Olot que estaban detrás de todo.",
+    "s5_attr": "Víctima — Alicante, España (identidad protegida)",
+    "s5_source": "Fuente: ABC, 2024",
+    "s5_url": "https://www.abc.es/espana/cataluna/extorsionado-tras-acceder-web-porno-1200-euros-20241031121002-nt.html",
+    "s6_badge": "Menor",
+    "s6_quote": "Conocí a una chica por redes sociales. Después de enviarle fotos íntimas, empezaron las amenazas: me exigían 100 euros por Bizum a cambio de no difundirlas con mis contactos. Pagué, pero las amenazas no pararon. Mi familia y yo denunciamos a la Policía. Descubrieron que el perfil era falso y que había más de 100 víctimas en toda España, tres de ellas menores como yo.",
+    "s6_attr": "Menor, 17 — Villa de Vallecas, Madrid, España (identidad protegida)",
+    "s6_source": "Fuente: ABC, 2025",
+    "s6_url": "https://www.abc.es/espana/madrid/gancho-fotos-sexuales-extorsion-100-menores-adultos-20251212114320-nt.html"
+  },
+  "footer": {
+    "source": "Historias reales documentadas por medios periodísticos verificados.",
+    "crisis": "Si estás en crisis, busca ayuda de inmediato."
+  },
+  "crisis": {
+    "title": "Crisis Helplines",
+    "lines": [
+      {"country": "ES", "number": "024", "name": "Línea de la Vida"},
+      {"country": "MX", "number": "800 290 0024", "name": "SAPTEL"},
+      {"country": "AR", "number": "135", "name": "Línea de Crisis"},
+      {"country": "CO", "number": "106", "name": "Línea 106"},
+      {"country": "CL", "number": "600 360 7777", "name": "PAICAB"},
+      {"country": "PE", "number": "0800 222 18", "name": "Telefonón"},
+      {"country": "EC", "number": "171", "name": "Línea de la Vida"},
+      {"country": "UY", "number": "0800 8498", "name": "Línea de Vida"},
+      {"country": "CR", "number": "128", "name": "ANAIS"},
+      {"country": "GTM", "number": "1716", "name": "Línea de la Vida"},
+      {"country": "RD", "number": "809-200-1400", "name": "Cuida tu Salud Mental"},
+      {"country": "Intl", "number": "", "name": "findahelpline.com", "url": "https://findahelpline.com"}
+    ]
+  },
+  "toggle": {
+    "more": "+ Más",
+    "less": "− Menos"
+  }
+}

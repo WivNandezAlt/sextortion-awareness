@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "title": "Think Before You Act",
+    "description": "Educational resource on how sexual arousal hijacks rational judgment and how predators exploit it. Learn to recognize risks like sextortion, cyber scams, and extortion.",
+    "og_title": "Think Before You Act",
+    "og_description": "Sexual arousal hijacks rational judgment. Learn how predators exploit it — and how to protect yourself."
+  },
+  "hero": {
+    "title": "Don't Decide While Aroused",
+    "subtitle": "Sexual arousal hijacks rational judgment. Predators know this — and they weaponize it against you."
+  },
+  "toc": ["Science", "Risks", "Tactics", "Phases", "Deepfakes", "Protection", "Response", "Legal", "Stories"],
+  "science": {
+    "label": "The Science",
+    "p1": "When sexually aroused, your prefrontal cortex (rational decision-making) is suppressed by the limbic system. Studies show people under arousal make drastically riskier choices, even when they know better. It's not weakness; it's neurology.",
+    "p2": "The hot-cold empathy gap explains why it's nearly impossible to predict your behavior while aroused when you're in a calm state. Brain scans reveal that sexual arousal activates the same reward circuits as substance cravings — your brain literally cannot weigh consequences the same way. This is why pre-decisions matter: decide your boundaries before you're in a heightened state."
+  },
+  "risks": {
+    "title": "What You Risk",
+    "sextortion": {
+      "title": "Sextortion",
+      "desc": "Blackmail where perpetrators threaten to distribute intimate images unless demands are met.",
+      "extra": "300%+ FBI case increase (2021-2024). Perpetrators pose as partners on dating apps, escalate to explicit exchanges, then threaten. Most operate from West Africa, Eastern Europe, and Southeast Asia. Teens and young men are the most targeted demographic. The FBI reported over $100M in losses in 2023 alone."
+    },
+    "scams": {
+      "title": "Cyber Scams & Phishing",
+      "desc": "Fraud using sexual content as bait to steal money or sensitive data.",
+      "extra": "Variants: Sugar daddy/momma scams, fake webcam shows, romance scams, sexting bots that harvest contacts. Social engineering: Scammers use psychological triggers like loneliness, desire for intimacy, or financial desperation. AI-generated profile photos make detection increasingly difficult."
+    },
+    "extortion": {
+      "title": "Online Extortion",
+      "desc": "Demanding payment through threats to release sensitive information.",
+      "extra": "Amplified by AI: Bots scrape data, clone voices, generate deepfake pornography to threaten victims with content that was never real. Multi-platform attacks: Perpetrators gather information from dating apps, social media, and data breaches. The escalation pattern: Initial demand is small, then grows exponentially once a victim pays."
+    },
+    "reputation": {
+      "title": "Reputation Damage",
+      "desc": "Intimate content online is permanent. It resurfaces years later.",
+      "extra": "During: Job background checks, College admissions, Child custody proceedings, Political campaigns, Professional licensing reviews. Even 'disappearing' messages can be screenshotted or recovered. Digital permanence: Once shared, content can be copied, downloaded, uploaded, and distributed across the internet within minutes."
+    },
+    "financial": {
+      "title": "Financial Ruin",
+      "desc": "Victims lose thousands on average. Perpetrators exploit the shame cycle repeatedly.",
+      "extra": "Repeat victimization: Shame of the first payment makes reporting feel impossible, so perpetrators drain victims again and again. Average losses: The FBI reports average individual losses of $3,000-$7,500 in sextortion cases. Cryptocurrency demands: Perpetrators increasingly demand payment in Bitcoin or gift cards."
+    },
+    "trauma": {
+      "title": "Psychological Trauma",
+      "desc": "Victims suffer anxiety, depression, and PTSD from sustained harassment and fear of exposure.",
+      "extra": "Chronic stress: The ongoing threat creates hypervigilance, sleep disorders, and social withdrawal. Many victims report the psychological damage outlasts the extortion itself. Suicide risk: Studies show sextortion victims are significantly more likely to experience suicidal ideation."
+    },
+    "doxing": {
+      "title": "Doxing & Identity Theft",
+      "desc": "Personal information leaked publicly, identities stolen, accounts hijacked across platforms.",
+      "extra": "Total exposure: Perpetrators compile real names, addresses, employers, and family members from multiple breaches. Once doxed, the data spreads across forums and is rarely fully removed."
+    },
+    "sabotage": {
+      "title": "Relationship Sabotage",
+      "desc": "Perpetrators send content to partners, family members, or employers to destroy support networks.",
+      "extra": "Strategic isolation: By targeting the people closest to you, perpetrators eliminate your support system and increase your dependency on complying with their demands."
+    },
+    "nonconsensual": {
+      "title": "Non-Consensual Sharing",
+      "desc": "Sharing intimate content without consent is illegal in many jurisdictions.",
+      "extra": "Image-based abuse: Even content originally shared consensually can be weaponized later. Laws in the US, UK, EU, and Latin America now criminalize non-consensual distribution. You never owe anyone an intimate image — and sharing it without consent is a crime."
+    },
+    "consensual_risks": {
+      "title": "Consensual Sharing Risks",
+      "desc": "Even when both parties consent, intimate content can leak through hacks, device theft, or changing trust dynamics.",
+      "extra": "Permanent loss of control: Screenshots, cloud breaches, malware, and ex-partners are all vectors. Over 90% of non-consensual distribution cases start with content originally shared consensually. The safest intimate media is the one never captured."
+    },
+    "deepfakes": {
+      "title": "Deepfakes & Synthetic Content",
+      "desc": "AI-generated images and videos can create fake intimate content using your face.",
+      "extra": "+400% increase in non-consensual deepfake pornography since 2023. They don't need real intimate photos — a single profile picture can be enough to create convincing fake content. Perpetrators use this to threaten victims with content that never existed. The TAKE IT DOWN Act (US) carries up to 2 years for sharing deepfakes. Canada (Bill C-16) increased the maximum penalty to 10 years."
+    },
+    "deepfake_threats": {
+      "title": "Deepfake Threats",
+      "desc": "They threaten to publish AI-generated fake intimate content unless you pay.",
+      "extra": "Synthetic sextortion: They create deepfakes using your social media photos and threaten to publish them. Voice cloning: They can clone your voice for fake calls to family members. Fake profiles: They use real faces on fake profiles to lure victims."
+    }
+  },
+  "tactics": {
+    "title": "How Predators Operate",
+    "label": "Common Tactics",
+    "grooming": "Grooming — Building trust over days or weeks before escalating.",
+    "reciprocity": "Reciprocity pressure — You sent one, now I need one.",
+    "time_pressure": "Time pressure — Creating false urgency to bypass rational thought.",
+    "platform_hopping": "Platform hopping — Moving to WhatsApp/Snapchat where content is harder to trace.",
+    "contacts": "Contact harvesting — Collecting friend list or employer info to increase leverage.",
+    "love_bombing": "Love bombing — Overwhelming attention and affection to create emotional dependency.",
+    "emergencies": "Fake emergencies — Claiming urgent medical or legal crises to bypass skepticism.",
+    "apps": "Download & install — Urging you to install apps that grant remote access to your device.",
+    "synthetic": "Synthetic content generation — Creating deepfakes from your social media photos and cloning your voice."
+  },
+  "playbook": {
+    "title": "The Predator's Playbook",
+    "step1_title": "Initial Contact",
+    "step1_desc": "A predator creates a fake profile on social media or dating apps, then initiates conversation. Profiles are carefully crafted to appear attractive and trustworthy — often using AI-generated or stolen photos.",
+    "step2_title": "Building Trust (Grooming)",
+    "step2_desc": "Rapport is built over days or weeks using love bombing, empathy, and shared interests. They move you to private platforms like WhatsApp, Telegram, or Snapchat where content is harder to trace.",
+    "step3_title": "Raising the Temperature",
+    "step3_desc": "The conversation turns sexual. They ask for intimate photos or videos — sometimes sending theirs first to pressure reciprocity. This is the critical moment where rational judgment is most compromised by arousal.",
+    "step4_title": "The Trap Closes",
+    "step4_desc": "Once they have your content, threats begin. They demand money, more content, or both — threatening to expose you to family, friends, and employers. A countdown or deadline creates false urgency.",
+    "step5_title": "Exploitation or Escape",
+    "step5_desc": "If you pay, demands escalate and your info is sold to other criminals. This cycle only ends when you block, report, and seek help. The shame is engineered — it is never your fault."
+  },
+  "deepfakes_section": {
+    "title": "Deepfakes & AI-Generated Content",
+    "flag": "Emerging Threat",
+    "desc": "Deepfakes are videos or images created with artificial intelligence that look real but aren't. Predators use them to create fake intimate content with your face and threaten to publish it.",
+    "what": "What they are: AI-generated videos or images that superimpose your face onto existing content. They don't need real intimate photos — a single profile picture can be enough to create convincing fake content.",
+    "how": "How they're used in sextortion: They create deepfakes using your social media photos and threaten to publish them unless you pay. They also clone your voice for fake calls to family members.",
+    "detect": "How to detect them: Stray or blurry hair, eyes that don't blink or have inconsistent color, strange neck movements, inconsistent quality between face and background, unnatural fades or transitions.",
+    "protect": "How to protect yourself: Reduce public photos with your face visible, don't share photos with frontal lighting, use watermarks on personal photos, verify identity in live video calls.",
+    "legal": "Legal framework: The TAKE IT DOWN Act (US, 2025) carries up to 2 years for sharing deepfakes and 18 months for threatening with them. Canada (Bill C-16, 2026) increased the maximum penalty to 10 years. UK (Crime and Policing Act 2026) criminalizes creating or supplying deepfake generators with up to 3 years. EU (Directive 2024/1385) requires criminalizing deepfakes by 2027."
+  },
+  "protect": {
+    "title": "How to Protect Yourself",
+    "pause": "Pause — If aroused or emotionally heightened, do not make financial decisions or share media.",
+    "anon": "Stay anonymous — Keep face, tattoos, and identifiable backgrounds out of intimate media.",
+    "accounts": "Segment accounts — Never link dating profiles to your real social media or phone number.",
+    "verify": "Verify — Reverse image search profile photos. Scammers use stolen pictures.",
+    "paying": "Paying is futile — Extortionists rarely delete material — they sell or reuse it.",
+    "report": "Report & block — Do not negotiate. Report to local police and the platform immediately.",
+    "support": "Get support — Cyber Civil Rights Initiative and Thorn offer free help for victims.",
+    "encrypt": "Encrypt everything — Use Signal or Wickr for sensitive conversations. Enable disappearing messages.",
+    "credit": "Freeze your credit — Place a credit freeze to prevent perpetrators from opening accounts in your name.",
+    "laws": "Know the laws — Many countries criminalize non-consensual image sharing. Document everything.",
+    "identity": "Staged identity — Keep dating profiles separate from your real identity: separate email, phone, social media.",
+    "instinct": "Trust your gut — If something feels off, it probably is. Don't ignore red flags for politeness."
+  },
+  "response": {
+    "title": "If It Happens to You",
+    "step1": "Stop all communication with the perpetrator.",
+    "step2": "Do not pay. Paying funds the crime and rarely stops the threats.",
+    "step3": "Save evidence — screenshots, URLs, profiles, messages.",
+    "step4": "Report at cybertipline.org or ic3.gov (FBI).",
+    "step5": "Contact a local victim advocacy group.",
+    "step6": "Talk to someone you trust. Isolation is the extortionist's greatest weapon."
+  },
+  "legal": {
+    "title": "Legal Background",
+    "flag": "Laws Against Image-Based Abuse",
+    "desc": "Image-based sexual abuse is now criminalized in most jurisdictions worldwide. The legal landscape has evolved rapidly, with many countries enacting specific laws rather than relying on general statutes. Key laws include:",
+    "us": "United States — The Take It Down Act (2025) carries 2–3 years for adults and up to 3 years for minors. Federal cyberstalking (18 USC 2261A) carries up to 5 years. Most sextortion prosecutions yield 5–20 years depending on charges. The FTC also allows victims to seek civil damages.",
+    "uk": "United Kingdom — Online Safety Act 2023: up to 5 years for sharing intimate images without consent. Ofcom can fine platforms up to £18 million or 10% of global revenue.",
+    "canada": "Canada — Criminal Code s.162.1: up to 5 years for non-consensual distribution. Criminal Code s.264.2: up to 10 years for criminal harassment.",
+    "spain": "Spain — Art. 197.7 CP: 3 months to 1 year in prison, or a fine of 6–12 months for non-consensual sharing. If images are obtained without consent: 1–4 years. With minors or for profit: up to 7 years.",
+    "italy": "Italy — Codice Rosso (Legge 69/2019) art. 612-ter: 1–6 years for non-consensual distribution of intimate images. Legge 134/2021 increased penalties for sextortion and cyberstalking.",
+    "mexico": "Mexico — Ley Olimpia (federal + all states): 3–6 years plus fine of 500–1,000 UMA. Some states (e.g., Nuevo León, Jalisco) impose up to 12 years.",
+    "argentina": "Argentina — Ley Belén (27.736): 6 months to 2 years for diffusion of intimate images. Threats: 3 months to 1 year. Extortion (art. 169 CP): 3–8 years.",
+    "chile": "Chile — Art. 161-B CP: imprisonment for extortion using intimate images. Art. 161-C: recording/diffusing intimate images in public places. Ley 21.675 expanded protections.",
+    "colombia": "Colombia — Ley 2064 (project): 4–6 years plus fine of 50–100 SMLMV. Art. 244 CP (extortion): 16–24 years.",
+    "peru": "Peru — Art. 153 CP (extortion): 10–15 years, up to life imprisonment with aggravating factors. Law 31814 expanded digital violence protections.",
+    "international": "International — The Istanbul Convention (Council of Europe) and the Budapest Convention on Cybercrime provide cross-border frameworks for prosecution and mutual legal assistance.",
+    "deepfakes": "Deepfakes — TAKE IT DOWN Act (US, 2025): up to 2 years for sharing deepfakes, 18 months for threatening with them. Bill C-16 (Canada, 2026): maximum 10 years. Crime and Policing Act 2026 (UK): up to 3 years for making/supplying deepfake generators. EU Directive 2024/1385: must criminalize by 2027. 61 global regulators issued joint statement (2026).",
+    "rights": "Your rights: Victims generally have the right to file criminal complaints, request takedown of content, obtain restraining orders, and claim civil damages. Many jurisdictions now offer anonymous reporting options and expedited removal processes. The law is on your side.",
+    "important": "Important: Laws vary by jurisdiction. If you are a victim, contact a local attorney or victim advocacy organization to understand the specific protections available in your country or state."
+  },
+  "testimonials": {
+    "title": "Real Stories",
+    "s1_badge": "Parent",
+    "s1_quote": "My son was a straight-A student, a second-degree black belt working on his Eagle Scout project. He thought he was talking to a 20-year-old woman on Facebook. After he sent one photo, they demanded $5,000, threatening to send it to his family and friends. He paid $150 — all he had — but they kept demanding more. He died by suicide hours later. His note apologized for not being smart enough. He was smart. He was trusting. And predators exploited that.",
+    "s1_attr": "Pauline Stuart, mother of Ryan Last, 17 — San Jose, California, USA",
+    "s1_source": "Source: LA Times, 2025",
+    "s1_url": "https://www.latimes.com/california/story/2025-05-12/sextortion-scam-teen-suicide",
+    "s2_badge": "Victim",
+    "s2_quote": "I matched with someone on Tinder and we chatted for days before moving to WhatsApp. We had a video call that turned sexual. Minutes after it ended, I received a screen recording of the call and a message: 'Tell me, share or delete?' They claimed to have my family and friends' information. I was in panic at first, but I blocked them and warned my contacts. I reported it to the police. If you don't panic, they have no hold over you.",
+    "s2_attr": "Alan Irwin, 35 — Larne, Northern Ireland",
+    "s2_source": "Source: BBC News, 2026",
+    "s2_url": "https://www.bbc.com/news/articles/cy5266l6gdro",
+    "s3_badge": "Survivor",
+    "s3_quote": "I was 13 when a 17-year-old boy at my school pressured me into sending explicit pictures. A few weeks later, I found out he'd shared them around the entire school. Hundreds of pupils had seen them. I later learned they were playing 'Top Trumps' with my photos at a festival. The school made me write an essay about what I'd done wrong, while the boys faced no consequences. My mum and I wrote a book together called 'When You Lose It' to help other young people.",
+    "s3_attr": "Roxy Longworth, 19 — UK",
+    "s3_source": "Source: BBC Radio 5 Live, 2022",
+    "s3_url": "https://www.bbc.co.uk/programmes/articles/2xvt1v53pVNKDlsXdKcNPT5/nudes-a-question-that-completely-ruined-my-life-for-so-long",
+    "s4_badge": "Survivor",
+    "s4_quote": "I was 15 when I exchanged photos with a boy I fancied. He forwarded them to others without my consent. My phone started buzzing in art class — older boys had my images. They'd been Bluetoothed around the entire sixth form, then my hometown, and eventually ended up on the phones of the men's football team. People knew I was underage and still passed them around. It took years of therapy, but I realized it wasn't my fault. Now I campaign for women's rights.",
+    "s4_attr": "Jess Davies, 32 — Aberystwyth, Wales, UK",
+    "s4_source": "Source: BBC News, 2025",
+    "s4_url": "https://www.bbc.com/news/articles/c9w8wkdpvllo",
+    "s5_badge": "Survivor",
+    "s5_quote": "My ex-boyfriend found intimate videos on my old phone after I asked him to get a number for me. When I ended the relationship, he threatened to share them with my work colleagues unless I paid him £103. I felt so violated. I attempted suicide. But I went to the police and he was charged with threatening to share intimate images. I had my day in court and he was convicted. It healed part of me. Don't give up.",
+    "s5_attr": "Tamara Black — Derby, UK",
+    "s5_source": "Source: BBC News, 2026",
+    "s5_url": "https://www.bbc.co.uk/news/articles/c8d5j018gdpo",
+    "s6_badge": "Victim",
+    "s6_quote": "A woman named 'Chelsea' messaged me on Instagram. She had a nice smile, Bible quotes in her profile. Our messages turned flirty, then she asked for a nude. I slipped into the bathroom at the hospital where I work and sent one. Within seconds, she sent screenshots of my Instagram followers — my family — and demanded $500. Then she started a countdown. It turned out to be a man in Nigeria. I paid $750 total. The shame was worse than the money.",
+    "s6_attr": "David, 32 — New Jersey, USA",
+    "s6_source": "Source: The New York Times / The Star, 2024",
+    "s6_url": "https://www.thestar.com.my/tech/tech-news/2024/05/16/chelsea-asked-for-nude-pictures-then-the-sextortion-began"
+  },
+  "footer": {
+    "source": "Real stories sourced from verified media reports.",
+    "crisis": "If in crisis, seek help immediately."
+  },
+  "crisis": {
+    "title": "Crisis Helplines",
+    "lines": [
+      {"country": "US", "number": "988", "name": "Suicide & Crisis Lifeline"},
+      {"country": "UK", "number": "116 123", "name": "Samaritans"},
+      {"country": "Intl", "number": "", "name": "findahelpline.com", "url": "https://findahelpline.com"}
+    ]
+  },
+  "toggle": {
+    "more": "+ More",
+    "less": "− Less"
+  }
+}
