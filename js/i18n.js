@@ -384,6 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var theme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', theme);
   document.getElementById('themeBtn').textContent = theme === 'dark' ? '\u{1F319}' : '\u2600\u{FE0F}';
+  document.getElementById('themeBtn').addEventListener('click', toggleTheme);
 
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
