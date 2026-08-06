@@ -38,7 +38,7 @@
       "extra": "Puede resurgir en verificaciones laborales, admisiones, custodias o campañas políticas."
     },
     "financial": {
-      "title": "Ruina Financiera",
+      "title": "Quiebre Financiero",
       "desc": "Las víctimas pierden miles de dólares. El ciclo de vergüenza impide denunciar.",
       "extra": "Victimización repetida: Pagar rara vez detiene las amenazas."
     },
@@ -48,7 +48,7 @@
       "extra": "Estrés crónico: Hipervigilancia, trastornos del sueño, aislamiento social. El daño psicológico a menudo supera la extorsión misma."
     },
     "doxing": {
-      "title": "Doxing y Robo de Identidad",
+      "title": "Doxeo y Robo de Identidad",
       "desc": "Información personal filtrada, identidades robadas, cuentas secuestradas.",
       "extra": "Exposición total: Nombre real, dirección, empleador, familiares. Una vez publicado, rara vez se elimina por completo."
     },
@@ -116,7 +116,7 @@
   },
   "protect": {
     "title": "Cómo Protegerte",
-    "pause": "Pausa — Si estás excitado o alterado, no tomes decisiones financieras ni compartas contenido.",
+    "pause": "Pausa — Si estás excitado o alterado, evita tomar decisiones financieras ni compartas contenido de ninguna clase.",
     "anon": "Anonimato — Mantén rostro, tatuajes y fondos fuera de contenido íntimo.",
     "accounts": "Cuentas separadas — No vincules perfiles de citas a tus redes reales.",
     "verify": "Verifica — Busca inversa de imágenes de perfil. Usan fotos robadas.",
