@@ -48,8 +48,8 @@
   --bg-elevated: #1a1a1a;
   --bg-hero: #080808;
   --text: #e8e4df;
-  --text-secondary: #9a9590;
-  --text-muted: #5a5550;
+  --text-secondary: #b8b0a8;
+  --text-muted: #7a7570;
   --border: rgba(255,255,255,.06);
   --border-soft: rgba(255,255,255,.03);
   --accent: #d97706;
@@ -88,9 +88,9 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--text);
 .top-bar-inner { display: flex; align-items: center; gap: .5rem; max-width: 720px; margin: 0 auto; width: 100%; }
 .logo { font-family: var(--font-display); font-weight: 700; font-size: .85rem; letter-spacing: -.01em; color: var(--text); margin-right: auto; opacity: .8; }
 .lang-group { display: flex; gap: .15rem; }
-.lang-group button { font-family: var(--font-body); font-size: .68rem; font-weight: 500; color: var(--text-muted); padding: .3rem .6rem; border-radius: 100px; transition: var(--transition); cursor: pointer; border: none; background: none; letter-spacing: .02em; }
-.lang-group button:hover { color: var(--text); background: var(--accent-soft); }
-.lang-group button.active { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.lang-group button { font-family: var(--font-body); font-size: .68rem; font-weight: 500; color: var(--text-secondary); padding: .3rem .6rem; border-radius: 100px; transition: var(--transition); cursor: pointer; border: none; background: none; letter-spacing: .02em; opacity: .7; }
+.lang-group button:hover { color: var(--text); background: var(--accent-soft); opacity: 1; }
+.lang-group button.active { color: var(--accent); background: var(--accent-soft); font-weight: 600; opacity: 1; }
 .theme-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; width: 30px; height: 30px; border-radius: 50%; font-size: .9rem; line-height: 1; display: flex; align-items: center; justify-content: center; transition: var(--transition); margin-left: .5rem; }
 .theme-btn:hover { color: var(--text); border-color: var(--text-muted); }
 
@@ -472,6 +472,8 @@ h2 .num {
   .case-body h3 { font-size: .82rem; }
   .case-body p { font-size: .78rem; }
   .crisis-popup { left: .75rem; right: .75rem; max-width: none; bottom: 4rem; }
+  .crisis-btn { width: 44px; height: 44px; bottom: 12px; left: 12px; }
+  .crisis-btn svg { width: 20px; height: 20px; }
   .back-to-top { bottom: 4rem; right: .75rem; width: 36px; height: 36px; }
   .tl-pair:last-child { margin-bottom: 0; }
   .steps ol li { font-size: .8rem; }
