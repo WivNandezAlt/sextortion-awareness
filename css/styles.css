@@ -71,7 +71,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.8; transition: background var(--transition-slow), color var(--transition-slow); -webkit-font-smoothing: antialiased; font-weight: 400; text-align: left; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.8; transition: background var(--transition-slow), color var(--transition-slow); -webkit-font-smoothing: antialiased; font-weight: 400; text-align: justify; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 ::selection { background: var(--accent); color: #fff; }
 
@@ -167,7 +167,7 @@ h2 .num {
   letter-spacing: .15em; font-weight: 600; color: var(--accent); margin-bottom: .6rem;
   position: relative; z-index: 1; opacity: .8;
 }
-.science-card p { color: var(--text-secondary); font-size: .92rem; margin: 0; position: relative; z-index: 1; line-height: 1.8; }
+.science-card p { color: var(--text-secondary); font-size: .92rem; margin: 0; position: relative; z-index: 1; line-height: 1.8; text-align: justify; }
 .science-card strong { color: var(--text); }
 
 /* TIMELINE (RISKS) */
@@ -218,7 +218,7 @@ h2 .num {
 .tl-pair:nth-child(5) .tl-card:last-child .tl-svg-wrap { background: var(--green-soft); color: var(--green); }
 
 .tl-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: .3rem; }
-.tl-card p { font-size: .85rem; color: var(--text-secondary); margin: 0; line-height: 1.7; }
+.tl-card p { font-size: .85rem; color: var(--text-secondary); margin: 0; line-height: 1.7; text-align: justify; }
 .tl-card .toggle-link {
   display: inline-block; margin-top: .5rem; font-size: .75rem; font-weight: 500;
   color: var(--accent); cursor: pointer; border: none; background: none; padding: 0;
@@ -274,7 +274,7 @@ h2 .num {
 }
 .case-body { flex: 1; }
 .case-body h3 { font-family: var(--font-display); font-size: .9rem; font-weight: 700; margin-bottom: .2rem; }
-.case-body p { font-size: .82rem; color: var(--text-secondary); margin: 0; line-height: 1.7; }
+.case-body p { font-size: .82rem; color: var(--text-secondary); margin: 0; line-height: 1.7; text-align: justify; }
 .case-body strong { color: var(--text); }
 
 /* PROTECT */
@@ -320,7 +320,7 @@ h2 .num {
   position: relative; overflow: hidden;
 }
 .legal-card::before { content: none; }
-.legal-card p { font-size: .86rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: .7rem; }
+.legal-card p { font-size: .86rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: .7rem; text-align: justify; }
 .legal-card p:last-child { margin-bottom: 0; }
 .legal-card strong { color: var(--text); }
 .legal-card .legal-flag {
@@ -331,7 +331,7 @@ h2 .num {
 .legal-card .law-list { list-style: margin: 0 0 .7rem 0; }
 .legal-card .law-list li {
   padding: .35rem 0 .35rem .85rem; font-size: .82rem; color: var(--text-secondary);
-  border-bottom: 1px solid var(--border); position: relative; line-height: 1.6;
+  border-bottom: 1px solid var(--border); position: relative; line-height: 1.6; text-align: justify;
 }
 .legal-card .law-list li:last-child { border-bottom: none; }
 .legal-card .law-list li::before { content: '\203A'; position: absolute; left: 0; color: var(--accent); font-weight: 600; font-size: .8rem; opacity: .5; }
@@ -355,7 +355,7 @@ h2 .num {
 .story-card blockquote {
   font-family: var(--font-display); font-size: 1.1rem; font-style: italic;
   line-height: 1.7; margin-bottom: 1rem; padding-left: 1rem;
-  position: relative; z-index: 1; font-weight: 400;
+  position: relative; z-index: 1; font-weight: 400; text-align: justify;
 }
 .story-card blockquote strong { color: #fff; font-style: normal; }
 .story-card .attribution { font-size: .8rem; color: #a09888; font-weight: 500; padding-left: 1rem; }
