@@ -205,6 +205,8 @@ var APP = (function() {
   return { init: init };
 })();
 
-document.addEventListener('DOMContentLoaded', function() {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() { APP.init(); });
+} else {
   APP.init();
-});
+}
