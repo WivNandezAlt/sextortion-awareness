@@ -192,14 +192,8 @@ var APP = (function() {
   }
 
   function init() {
-    initTheme();
-    initScrollObserver();
-    initProgressBar();
-    initParticles();
-    initCrisisPopup();
-    initBackToTop();
-    initSearch();
-    initShareButtons();
+    var fns = [initTheme, initScrollObserver, initProgressBar, initParticles, initCrisisPopup, initBackToTop, initSearch, initShareButtons];
+    fns.forEach(function(fn) { try { fn(); } catch(e) { console.error(fn.name + ':', e); } });
   }
 
   return { init: init };
