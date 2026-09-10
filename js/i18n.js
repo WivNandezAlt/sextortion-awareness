@@ -377,16 +377,6 @@ var I18N = (function() {
   };
 })();
 
-var isTransitioning = false;
-
-function toggleTheme() {
-  var d = document.documentElement;
-  var next = d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  d.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  document.getElementById('themeBtn').textContent = next === 'dark' ? '\u{1F319}' : '\u2600\u{FE0F}';
-}
-
 function toggleExtra(btn) {
   var extra = btn.parentNode.querySelector('.extra');
   extra.classList.toggle('show');
@@ -402,98 +392,4 @@ function toggleExtra(btn) {
 
 document.addEventListener('DOMContentLoaded', function() {
   I18N.init();
-
-  var theme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', theme);
-  document.getElementById('themeBtn').textContent = theme === 'dark' ? '\u{1F319}' : '\u2600\u{FE0F}';
-  document.getElementById('themeBtn').addEventListener('click', toggleTheme);
-
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.animate').forEach(function(el) { observer.observe(el); });
-
-  var bar = document.getElementById('progressBar');
-  window.addEventListener('scroll', function() {
-    var scrollTop = window.scrollY;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = progress + '%';
-  });
-
-  var canvas = document.getElementById('particle-canvas');
-  if (canvas) {
-    var ctx = canvas.getContext('2d');
-    var particles = [];
-    var W, H;
-
-    function resize() {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    var spacing = 28;
-    var cols = Math.ceil(W / spacing) + 1;
-    var rows = Math.ceil(H / spacing) + 1;
-    for (var i = 0; i < cols * rows; i++) {
-      var col = i % cols;
-      var row = Math.floor(i / cols);
-      particles.push({
-        x: col * spacing + (Math.random() - 0.5) * 4,
-        y: row * spacing + (Math.random() - 0.5) * 4,
-        baseX: col * spacing,
-        baseY: row * spacing,
-        phase: Math.random() * Math.PI * 2,
-        speed: 0.3 + Math.random() * 0.4
-      });
-    }
-
-    var time = 0;
-    function animate() {
-      time += 0.008;
-      ctx.clearRect(0, 0, W, H);
-      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      var alpha = isDark ? 0.08 : 0.12;
-
-      for (var i = 0; i < particles.length; i++) {
-        var p = particles[i];
-        var dx = Math.sin(time * p.speed + p.phase) * 2;
-        var dy = Math.cos(time * p.speed * 0.7 + p.phase) * 2;
-        var pulse = 0.5 + 0.5 * Math.sin(time * 1.2 + p.phase);
-        var a = alpha * (0.6 + 0.4 * pulse);
-        ctx.beginPath();
-        ctx.arc(p.baseX + dx, p.baseY + dy, 1.2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,' + a + ')';
-        ctx.fill();
-      }
-      requestAnimationFrame(animate);
-    }
-    animate();
-  }
-
-  var crisisBtn = document.getElementById('crisisBtn');
-  var popup = document.getElementById('crisisPopup');
-  var closeBtn = document.getElementById('closeCrisis');
-  if (crisisBtn && popup) {
-    crisisBtn.addEventListener('click', function() { popup.classList.toggle('show'); });
-    closeBtn.addEventListener('click', function() { popup.classList.remove('show'); });
-    document.addEventListener('click', function(e) {
-      if (!popup.contains(e.target) && e.target !== crisisBtn && !crisisBtn.contains(e.target)) {
-        popup.classList.remove('show');
-      }
-    });
-  }
-
-  var backBtn = document.getElementById('backToTop');
-  if (backBtn) {
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 300) backBtn.classList.add('visible');
-      else backBtn.classList.remove('visible');
-    });
-    backBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  }
 });
