@@ -152,6 +152,12 @@
     "chile": "Chile — Art. 161-B CP: imprisonment for extortion using intimate images. Art. 161-C: recording/diffusing intimate images in public places. Ley 21.675 expanded protections.",
     "colombia": "Colombia — Ley 2064 (project): 4–6 years plus fine of 50–100 SMLMV. Art. 244 CP (extortion): 16–24 years.",
     "peru": "Peru — Art. 153 CP (extortion): 10–15 years, up to life imprisonment with aggravating factors. Law 31814 expanded digital violence protections.",
+    "brazil": "Brazil — Law 14.132/2021 (addition to Art. 218-C CP): 1–5 years for non-consensual distribution of intimate content. In 2023, the Superior Electoral Court classified non-consensual intimate content distribution as an electoral crime. Harsher penalties if the victim is under 18.",
+    "uruguay": "Uruguay — Law 19.951 (2020): up to 2 years in prison for non-consensual distribution of intimate images. If used for extortion: aggravated penalties under Art. 346 CP.",
+    "bolivia": "Bolivia — Law 1158 (2020): amends the Penal Code to include digital sexual privacy crimes. Non-consensual distribution: 2–6 years in prison. Extortion with intimate images: 4–10 years.",
+    "paraguay": "Paraguay — Law 6007/2017 (Habeas Data Law): protects personal data including intimate images. Penalties for non-consensual distribution: 2–5 years under the Penal Code (Art. 139).",
+    "dominican_rep": "Dominican Republic — Law 63-17 (Code for Protection of Fundamental Rights): Art. 273-1 criminalizes non-consensual intimate content distribution with 3–5 years in prison and fines of 10–100 minimum wages.",
+    "panama": "Panama — Law 82 (2019): criminalizes cyberstalking and non-consensual intimate content distribution. Penalties of 2–4 years. If the victim is a minor: aggravated penalties of 4–8 years.",
     "international": "International — The Istanbul Convention (Council of Europe) and the Budapest Convention on Cybercrime provide cross-border frameworks for prosecution and mutual legal assistance.",
     "deepfakes": "Deepfakes — TAKE IT DOWN Act (US, 2025): up to 2 years for sharing deepfakes, 18 months for threatening with them. Bill C-16 (Canada, 2026): maximum 10 years. Crime and Policing Act 2026 (UK): up to 3 years for making/supplying deepfake generators. EU Directive 2024/1385: must criminalize by 2027. 61 global regulators issued joint statement (2026).",
     "rights": "Your rights: Victims generally have the right to file criminal complaints, request takedown of content, obtain restraining orders, and claim civil damages. Many jurisdictions now offer anonymous reporting options and expedited removal processes. The law is on your side.",
@@ -199,6 +205,8 @@
     "lines": [
       {"country": "US", "number": "988", "name": "Suicide & Crisis Lifeline"},
       {"country": "UK", "number": "116 123", "name": "Samaritans"},
+      {"country": "AU", "number": "13 11 14", "name": "Lifeline"},
+      {"country": "CA", "number": "1-833-456-4566", "name": "Talk Suicide Canada"},
       {"country": "Intl", "number": "", "name": "findahelpline.com", "url": "https://findahelpline.com"}
     ]
   },

@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta property="og:title" content="">
-<meta property="og:description" content="">
+<meta name="description" content="Recurso educativo sobre cómo la excitación sexual secuestra el juicio racional y cómo los depredadores lo explotan. Aprende a reconocer riesgos como sextorsión, estafas cibernéticas y extorsión.">
+<meta name="keywords" content="sextorsión, sextortion, deepfakes, ciberseguridad, privacidad, extorsión sexual, seguridad digital, protección online">
+<meta name="author" content="Think Before You Act">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thinkbeforeyouact.org">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Piensa Antes de Actuar — Think Before You Act">
+<meta property="og:description" content="La excitación sexual secuestra el juicio racional. Aprende cómo los depredadores lo explotan — y cómo protegerte.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thinkbeforeyouact.org">
 <meta property="og:image" content="https://thinkbeforeyouact.org/preview.jpg">
@@ -15,13 +21,46 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="pt_BR">
 <meta property="og:locale:alternate" content="it_IT">
+<meta property="og:site_name" content="Think Before You Act">
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Piensa Antes de Actuar — Think Before You Act">
+<meta name="twitter:description" content="La excitación sexual secuestra el juicio racional. Aprende cómo los depredadores lo explotan — y cómo protegerte.">
 <meta name="twitter:image" content="https://thinkbeforeyouact.org/preview.jpg">
+
+<!-- Theme -->
 <meta name="theme-color" content="#080b16">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://thinkbeforeyouact.org">
+<meta name="color-scheme" content="dark light">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Think Before You Act",
+  "url": "https://thinkbeforeyouact.org",
+  "description": "Recurso educativo sobre sextorsión, deepfakes y seguridad digital.",
+  "sameAs": [],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Recursos de Seguridad Digital",
+    "itemListElement": [
+      {
+        "@type": "WebPage",
+        "name": "Sextorsión: Guía de Prevención",
+        "url": "https://thinkbeforeyouact.org#risks"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Deepfakes: Amenaza Emergente",
+        "url": "https://thinkbeforeyouact.org#deepfakes-section"
+      }
+    ]
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap">
@@ -29,359 +68,442 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="progress-bar" id="progressBar"></div>
-<div class="top-bar">
+
+<!-- Skip to content -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<!-- Top Bar -->
+<header class="top-bar" role="banner">
   <div class="top-bar-inner">
     <span class="logo">&#9888; Think Before You Act</span>
-    <span class="lang-group">
-      <button id="l-es" class="active" aria-label="Cambiar a Español" aria-pressed="true">ES</button>
-      <button id="l-en" aria-label="Switch to English" aria-pressed="false">EN</button>
-      <button id="l-pt" aria-label="Mudar para Português" aria-pressed="false">PT</button>
-      <button id="l-it" aria-label="Passa all'Italiano" aria-pressed="false">IT</button>
+
+    <!-- Search -->
+    <div class="search-container">
+      <label for="searchInput" class="sr-only">Buscar</label>
+      <input type="search" id="searchInput" class="search-input" placeholder="Buscar..." autocomplete="off" aria-label="Buscar en el contenido">
+      <div class="search-results" id="searchResults" role="listbox" aria-label="Resultados de búsqueda"></div>
+    </div>
+
+    <!-- Language Switcher -->
+    <span class="lang-group" role="tablist" aria-label="Selector de idioma">
+      <button id="l-es" class="active" role="tab" aria-selected="true" aria-pressed="true" aria-label="Cambiar a Español" tabindex="0">ES</button>
+      <button id="l-en" role="tab" aria-selected="false" aria-pressed="false" aria-label="Switch to English" tabindex="-1">EN</button>
+      <button id="l-pt" role="tab" aria-selected="false" aria-pressed="false" aria-label="Mudar para Português" tabindex="-1">PT</button>
+      <button id="l-it" role="tab" aria-selected="false" aria-pressed="false" aria-label="Passa all'Italiano" tabindex="-1">IT</button>
     </span>
+
     <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle dark/light theme">&#127769;</button>
   </div>
-</div>
+</header>
 
-<div class="hero">
-  <canvas id="particle-canvas"></canvas>
+<!-- Hero -->
+<section class="hero" role="region" aria-label="Hero">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <h1 data-i18n="hero.title">No Decidas Cuando Estés Excitado</h1>
     <p data-i18n="hero.subtitle">La excitación sexual secuestra el juicio racional. Los depredadores lo saben y lo usan contra ti.</p>
-  </div>
-</div>
 
-<div class="content">
-  <div class="toc animate">
-    <a href="#science">Science</a>
-    <a href="#risks">Risks</a>
-    <a href="#tactics">Tactics</a>
-    <a href="#playbook">Phases</a>
+    <!-- Share Buttons -->
+    <div class="share-bar" role="group" oria-label="Compartir">
+      <button class="share-btn" data-platform="twitter" aria-label="Compartir en Twitter" title="Compartir en Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </button>
+      <button class="share-btn" data-platform="facebook" aria-label="Compartir en Facebook" title="Compartir en Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </button>
+      <button class="share-btn" data-platform="whatsapp" aria-label="Compartir en WhatsApp" title="Compartir en WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </button>
+      <button class="share-btn" data-platform="telegram" aria-label="Compartir en Telegram" title="Compartir en Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<main class="content" id="main-content">
+
+  <!-- Table of Contents -->
+  <nav class="toc animate" aria-label="Tabla de contenidos">
+    <a href="#science">Ciencia</a>
+    <a href="#risks">Riesgos</a>
+    <a href="#tactics">Tácticas</a>
+    <a href="#platforms">Plataformas</a>
+    <a href="#playbook">Fases</a>
     <a href="#deepfakes-section">Deepfakes</a>
-    <a href="#protect">Protection</a>
-    <a href="#response">Response</a>
-    <a href="#legal">Legal</a>
-    <a href="#testimonials">Stories</a>
-  </div>
+    <a href="#protect">Protección</a>
+    <a href="#response">Respuesta</a>
+    <a href="#legal">Legales</a>
+    <a href="#testimonials">Casos</a>
+  </nav>
 
-  <div class="science-card animate" id="science">
+  <!-- Science Section -->
+  <article class="science-card animate" id="science">
     <div class="label" data-i18n="science.label">La Ciencia</div>
     <p data-i18n-html="science.p1">Cuando estás excitado, la corteza prefrontal es anulada por el sistema límbico. Estudios demuestran que se toman decisiones drásticamente más riesgosas. No es debilidad; es neurología.</p>
     <p style="margin-top:.75rem;color:var(--text-secondary);font-size:.92rem;position:relative;z-index:1;line-height:1.75" data-i18n-html="science.p2">La brecha empática frío-caliente explica por qué es casi imposible predecir tu comportamiento cuando estás excitado si estás en un estado de calma. Escáneres cerebrales revelan que la excitación sexual activa los mismos circuitos de recompensa que las drogas: tu cerebro literalmente no puede evaluar las consecuencias de la misma manera. Por eso las pre-decisiones importan: define tus límites antes de estar en un estado alterado.</p>
-  </div>
+  </article>
 
-  <div class="section-divider"></div>
-  <h2 id="risks" class="animate"><span class="num badge-red">1</span> <span data-i18n="risks.title">Lo que Arriesgas</span></h2>
+  <div class="section-divider" aria-hidden="true"></div>
 
-  <div class="timeline">
-    <div class="tl-pair">
-      <div class="tl-card" data-risk="sextortion">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v5c0 5-3.5 9.7-7 11-3.5-1.3-7-6-7-11V6l7-4z"/><rect x="10" y="9" width="4" height="3" rx=".5"/><circle cx="12" cy="14" r=".5"/></svg></div>
-        <h3>Sextorsión</h3>
-        <p>Chantaje donde amenazan con distribuir imágenes íntimas si no cumples sus demandas.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
-      </div>
-      <div class="tl-dot tl-dot-1"></div>
-      <div class="tl-card" data-risk="scams">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6c0-3 3-5 6-5s6 2 6 5c0 3-2 5-4 6l-2 2"/><path d="M14 16l-4 4h8"/><path d="M12 20l-2 2"/><circle cx="16" cy="4" r="1.2"/></svg></div>
-        <h3>Estafas y Phishing</h3>
-        <p>Fraude usando contenido sexual como cebo para robar dinero o datos.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
-      </div>
-    </div>
+  <!-- Risks Section -->
+  <section aria-labelledby="risks-heading">
+    <h2 id="risks" class="animate" id="risks-heading"><span class="num badge-red">1</span> <span data-i18n="risks.title">Lo que Arriesgas</span></h2>
 
-    <div class="tl-pair">
-      <div class="tl-card" data-risk="extortion">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h8v10H8z"/><path d="M8 12h8"/><path d="M10 4h4v3h-4z"/><circle cx="12" cy="12" r="1"/></svg></div>
-        <h3>Extorsión en Línea</h3>
-        <p>Exigir algo de valor amenazando con divulgar información sensible.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
+    <div class="timeline" role="list">
+      <div class="tl-pair" role="listitem">
+        <div class="tl-card" data-risk="sextortion">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 4v5c0 5-3.5 9.7-7 11-3.5-1.3-7-6-7-11V6l7-4z"/><rect x="10" y="9" width="4" height="3" rx=".5"/><circle cx="12" cy="14" r=".5"/></svg></div>
+          <h3>Sextorsión</h3>
+          <p>Chantaje donde amenazan con distribuir imágenes íntimas si no cumples sus demandas.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-sextortion">+ Más</button>
+          <div class="extra" id="extra-sextortion" role="region"></div>
+        </div>
+        <div class="tl-dot tl-dot-1" aria-hidden="true"></div>
+        <div class="tl-card" data-risk="scams">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6c0-3 3-5 6-5s6 2 6 5c0 3-2 5-4 6l-2 2"/><path d="M14 16l-4 4h8"/><path d="M12 20l-2 2"/><circle cx="16" cy="4" r="1.2"/></svg></div>
+          <h3>Estafas y Phishing</h3>
+          <p>Fraude usando contenido sexual como cebo para robar dinero o datos.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-scams">+ Más</button>
+          <div class="extra" id="extra-scams" role="region"></div>
+        </div>
       </div>
-      <div class="tl-dot tl-dot-3"></div>
-      <div class="tl-card" data-risk="reputation">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M4 20c0-4 3-7 8-7s8 3 8 7"/><path d="M18 2l3 3-3 3"/></svg></div>
-        <h3>Daño Reputacional</h3>
-        <p>El contenido íntimo en línea es permanente.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
-      </div>
-    </div>
 
-    <div class="tl-pair">
-      <div class="tl-card" data-risk="financial">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M4 16l4-6 4 3 5-8"/><circle cx="17" cy="5" r="1.5"/><path d="M18 9l-4-4"/></svg></div>
-        <h3>Ruina Financiera</h3>
-        <p>Las víctimas pierden miles de dólares. El ciclo de vergüenza impide denunciar.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
+      <div class="tl-pair" role="listitem">
+        <div class="tl-card" data-risk="extortion">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7h8v10H8z"/><path d="M8 12h8"/><path d="M10 4h4v3h-4z"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <h3>Extorsión en Línea</h3>
+          <p>Exigir algo de valor amenazando con divulgar información sensible.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-extortion">+ Más</button>
+          <div class="extra" id="extra-extortion" role="region"></div>
+        </div>
+        <div class="tl-dot tl-dot-3" aria-hidden="true"></div>
+        <div class="tl-card" data-risk="reputation">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M4 20c0-4 3-7 8-7s8 3 8 7"/><path d="M18 2l3 3-3 3"/></svg></div>
+          <h3>Daño Reputacional</h3>
+          <p>El contenido íntimo en línea es permanente.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-reputation">+ Más</button>
+          <div class="extra" id="extra-reputation" role="region"></div>
+        </div>
       </div>
-      <div class="tl-dot tl-dot-5"></div>
-      <div class="tl-card" data-risk="trauma">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-2 0-4 1-4 3 0-2-2-3-4-3S2 6 2 8c0 3 2 5 4 6l6 6 6-6c2-1 4-3 4-6 0-2-2-4-4-4s-4 1-4 3c0-2-2-3-4-3z"/></svg></div>
-        <h3>Trauma Psicológico</h3>
-        <p>Las víctimas sufren ansiedad, depresión y TEPT por el acoso sostenido.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
-      </div>
-    </div>
 
-    <div class="tl-pair">
-      <div class="tl-card" data-risk="doxing">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M4 20c0-4 3-7 8-7s8 3 8 7"/><path d="M8 5l-2 3 2 3"/></svg></div>
-        <h3>Doxing y Robo de Identidad</h3>
-        <p>Información personal filtrada, identidades robadas, cuentas secuestradas.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
+      <div class="tl-pair" role="listitem">
+        <div class="tl-card" data-risk="financial">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20"/><path d="M4 16l4-6 4 3 5-8"/><circle cx="17" cy="5" r="1.5"/><path d="M18 9l-4-4"/></svg></div>
+          <h3>Ruina Financiera</h3>
+          <p>Las víctimas pierden miles de dólares. El ciclo de vergüenza impide denunciar.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-financial">+ Más</button>
+          <div class="extra" id="extra-financial" role="region"></div>
+        </div>
+        <div class="tl-dot tl-dot-5" aria-hidden="true"></div>
+        <div class="tl-card" data-risk="trauma">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4c-2 0-4 1-4 3 0-2-2-3-4-3S2 6 2 8c0 3 2 5 4 6l6 6 6-6c2-1 4-3 4-6 0-2-2-4-4-4s-4 1-4 3c0-2-2-3-4-3z"/></svg></div>
+          <h3>Trauma Psicológico</h3>
+          <p>Las víctimas sufren ansiedad, depresión y TEPT por el acoso sostenido.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-trauma">+ Más</button>
+          <div class="extra" id="extra-trauma" role="region"></div>
+        </div>
       </div>
-      <div class="tl-dot tl-dot-2"></div>
-      <div class="tl-card" data-risk="sabotage">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h3>Sabotaje de Relaciones</h3>
-        <p>Envían contenido a parejas, familiares o empleadores para destruir tu red de apoyo.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
+
+      <div class="tl-pair" role="listitem">
+        <div class="tl-card" data-risk="doxing">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M4 20c0-4 3-7 8-7s8 3 8 7"/><path d="M8 5l-2 3 2 3"/></svg></div>
+          <h3>Doxing y Robo de Identidad</h3>
+          <p>Información personal filtrada, identidades robadas, cuentas secuestradas.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-doxing">+ Más</button>
+          <div class="extra" id="extra-doxing" role="region"></div>
+        </div>
+        <div class="tl-dot tl-dot-2" aria-hidden="true"></div>
+        <div class="tl-card" data-risk="sabotage">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Sabotaje de Relaciones</h3>
+          <p>Envían contenido a parejas, familiares o empleadores para destruir tu red de apoyo.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-sabotage">+ Más</button>
+          <div class="extra" id="extra-sabotage" role="region"></div>
+        </div>
+      </div>
+
+      <div class="tl-pair" role="listitem">
+        <div class="tl-card" data-risk="nonconsensual">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-6"/><path d="M12 11V7"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="9" r="1" fill="currentColor"/><path d="M3 3l18 18"/></svg></div>
+          <h3>Difusión No Consentida</h3>
+          <p>Compartir contenido íntimo sin consentimiento es ilegal en muchos países.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-nonconsensual">+ Más</button>
+          <div class="extra" id="extra-nonconsensual" role="region"></div>
+        </div>
+        <div class="tl-dot tl-dot-4" aria-hidden="true"></div>
+        <div class="tl-card" data-risk="consensual_risks">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <h3>Riesgos del Contenido Consensuado</h3>
+          <p>Incluso cuando ambas partes consienten, el contenido íntimo puede filtrarse.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-consensual">+ Más</button>
+          <div class="extra" id="extra-consensual" role="region"></div>
+        </div>
+      </div>
+
+      <div class="tl-pair" role="listitem">
+        <div class="tl-card" data-risk="deepfakes">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3l6 6-6 6"/><path d="M9 21l-6-6 6-6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h3>Deepfakes y Contenido Sintético</h3>
+          <p>Imágenes y videos generados por IA pueden crear contenido íntimo falso usando tu rostro.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-deepfakes">+ Más</button>
+          <div class="extra" id="extra-deepfakes" role="region"></div>
+        </div>
+        <div class="tl-dot tl-dot-6" aria-hidden="true"></div>
+        <div class="tl-card" data-risk="deepfake_threats">
+          <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Amenazas con Deepfakes</h3>
+          <p>Te amenazan con publicar contenido íntimo falso generado por IA si no pagas.</p>
+          <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false" aria-controls="extra-deepfake-threats">+ Más</button>
+          <div class="extra" id="extra-deepfake-threats" role="region"></div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="tl-pair">
-      <div class="tl-card" data-risk="nonconsensual">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-6"/><path d="M12 11V7"/><circle cx="12" cy="17" r="1" fill="currentColor"/><circle cx="12" cy="9" r="1" fill="currentColor"/><path d="M3 3l18 18"/></svg></div>
-        <h3>Difusión No Consentida</h3>
-        <p>Compartir contenido íntimo sin consentimiento es ilegal en muchos países.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
-      </div>
-      <div class="tl-dot tl-dot-4"></div>
-      <div class="tl-card" data-risk="consensual_risks">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-        <h3>Riesgos del Contenido Consensuado</h3>
-        <p>Incluso cuando ambas partes consienten, el contenido íntimo puede filtrarse.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
-      </div>
-    </div>
+  <div class="section-divider" aria-hidden="true"></div>
 
-    <div class="tl-pair">
-      <div class="tl-card" data-risk="deepfakes">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3l6 6-6 6"/><path d="M9 21l-6-6 6-6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <h3>Deepfakes y Contenido Sintético</h3>
-        <p>Imágenes y videos generados por IA pueden crear contenido íntimo falso usando tu rostro.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
-      </div>
-      <div class="tl-dot tl-dot-6"></div>
-      <div class="tl-card" data-risk="deepfake_threats">
-        <div class="tl-svg-wrap"><svg class="tl-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Amenazas con Deepfakes</h3>
-        <p>Te amenazan con publicar contenido íntimo falso generado por IA si no pagas.</p>
-        <button class="toggle-link" onclick="toggleExtra(this)" aria-expanded="false">+ Más</button>
-        <div class="extra"></div>
+  <!-- Tactics Section -->
+  <section aria-labelledby="tactics-heading">
+    <h2 id="tactics" class="animate"><span class="num badge-orange">2</span> <span data-i18n="tactics.title">Cómo Operan los Depredadores</span></h2>
+    <div class="tactics animate">
+      <strong class="label" data-i18n="tactics.label">Tácticas Comunes</strong>
+      <div class="tactics-grid" role="list">
+        <div class="tactics-item" data-tactic="grooming" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l3-3 4 2 2-2 4 2 3-3 3 3"/><path d="M3 19l3-3 4 2 2-2 4 2 3-3 3 3"/></svg></span><div><strong>Grooming</strong> Construir confianza por días o semanas antes de escalar.</div></div>
+        <div class="tactics-item" data-tactic="reciprocity" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M7 22l-4-4 4-4"/><path d="M3 6h14a4 4 0 010 8H7"/></svg></span><div><strong>Presión de reciprocidad</strong> — Tú enviaste, ahora yo necesito una.</div></div>
+        <div class="tactics-item" data-tactic="time_pressure" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><strong>Presión de tiempo</strong> — Crear urgencia falsa para evitar el pensamiento racional.</div></div>
+        <div class="tactics-item" data-tactic="platform_hopping" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M15 6l6 6-6 6"/></svg></span><div><strong>Cambio de plataforma</strong> — Ir a WhatsApp/Snapchat donde es más difícil rastrear.</div></div>
+        <div class="tactics-item" data-tactic="contacts" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span><div><strong>Recolectar contactos</strong> — Obtener amigos o empleador para aumentar coerción.</div></div>
+        <div class="tactics-item" data-tactic="love_bombing" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2 0-4 1-5 3-1-2-3-3-5-3S0 4 0 6c0 3 2 5 3 6l9 9 9-9c1-1 3-3 3-6 0-2-1-4-3-4s-4 1-5 3c-1-2-3-3-5-3z"/></svg></span><div><strong>Love bombing</strong> — Atención y afecto abrumadores para crear dependencia emocional.</div></div>
+        <div class="tactics-item" data-tactic="emergencies" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4"/><path d="M12 4v16"/><path d="M18 6l-4-2"/><path d="M6 18l4 2"/></svg></span><div><strong>Falsas emergencias</strong> — Alegar crisis médicas o legales urgentes para evitar el escepticismo.</div></div>
+        <div class="tactics-item" data-tactic="apps" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span><div><strong>Instalar apps</strong> — Pedirte que instales apps que dan acceso remoto a tu dispositivo.</div></div>
+        <div class="tactics-item" data-tactic="synthetic" role="listitem"><span class="ticon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3l6 6-6 6"/><path d="M9 21l-6-6 6-6"/><circle cx="12" cy="12" r="2"/></svg></span><div><strong>Generación de contenido sintético</strong> — Crear deepfakes usando fotos de tus redes sociales y clonar tu voz.</div></div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="section-divider"></div>
-  <h2 id="tactics" class="animate"><span class="num badge-orange">2</span> <span data-i18n="tactics.title">Cómo Operan los Depredadores</span></h2>
-  <div class="tactics animate">
-    <strong class="label" data-i18n="tactics.label">Tácticas Comunes</strong>
-    <div class="tactics-grid">
-      <div class="tactics-item" data-tactic="grooming"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l3-3 4 2 2-2 4 2 3-3 3 3"/><path d="M3 19l3-3 4 2 2-2 4 2 3-3 3 3"/></svg></span><div><strong>Grooming</strong> Construir confianza por días o semanas antes de escalar.</div></div>
-      <div class="tactics-item" data-tactic="reciprocity"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M7 22l-4-4 4-4"/><path d="M3 6h14a4 4 0 010 8H7"/></svg></span><div><strong>Presión de reciprocidad</strong> — Tú enviaste, ahora yo necesito una.</div></div>
-      <div class="tactics-item" data-tactic="time_pressure"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><strong>Presión de tiempo</strong> — Crear urgencia falsa para evitar el pensamiento racional.</div></div>
-      <div class="tactics-item" data-tactic="platform_hopping"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M15 6l6 6-6 6"/></svg></span><div><strong>Cambio de plataforma</strong> — Ir a WhatsApp/Snapchat donde es más difícil rastrear.</div></div>
-      <div class="tactics-item" data-tactic="contacts"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span><div><strong>Recolectar contactos</strong> — Obtener amigos o empleador para aumentar coerción.</div></div>
-      <div class="tactics-item" data-tactic="love_bombing"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2 0-4 1-5 3-1-2-3-3-5-3S0 4 0 6c0 3 2 5 3 6l9 9 9-9c1-1 3-3 3-6 0-2-1-4-3-4s-4 1-5 3c-1-2-3-3-5-3z"/></svg></span><div><strong>Love bombing</strong> — Atención y afecto abrumadores para crear dependencia emocional.</div></div>
-      <div class="tactics-item" data-tactic="emergencies"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4"/><path d="M12 4v16"/><path d="M18 6l-4-2"/><path d="M6 18l4 2"/></svg></span><div><strong>Falsas emergencias</strong> — Alegar crisis médicas o legales urgentes para evitar el escepticismo.</div></div>
-      <div class="tactics-item" data-tactic="apps"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span><div><strong>Instalar apps</strong> — Pedirte que instales apps que dan acceso remoto a tu dispositivo.</div></div>
-      <div class="tactics-item" data-tactic="synthetic"><span class="ticon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3l6 6-6 6"/><path d="M9 21l-6-6 6-6"/><circle cx="12" cy="12" r="2"/></svg></span><div><strong>Generación de contenido sintético</strong> — Crear deepfakes usando fotos de tus redes sociales y clonar tu voz.</div></div>
-    </div>
-  </div>
+  <div class="section-divider" aria-hidden="true"></div>
 
-  <div class="section-divider"></div>
-  <h2 id="platforms" class="animate"><span class="num badge-orange">3</span> <span data-i18n="platforms.title">Plataformas de Riesgo</span></h2>
-  <p class="platforms-subtitle animate" data-i18n="platforms.subtitle">No todas las plataformas son igual de seguras. Conoce los riesgos específicos de cada una.</p>
-  <div class="platforms-grid">
-    <div class="platform-card animate" data-platform="apps">
-      <div class="platform-icon" style="background:var(--red-soft);color:var(--red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-      <h3>Apps de Dating</h3>
-      <div class="platforms-list">Tinder, Bumble, Hinge, Grindr</div>
-      <p class="platform-risk"></p>
-      <p class="platform-tip"></p>
+  <!-- Platforms Section -->
+  <section aria-labelledby="platforms-heading">
+    <h2 id="platforms" class="animate"><span class="num badge-orange">3</span> <span data-i18n="platforms.title">Plataformas de Riesgo</span></h2>
+    <p class="platforms-subtitle animate" data-i18n="platforms.subtitle">No todas las plataformas son igual de seguras. Conoce los riesgos específicos de cada una.</p>
+    <div class="platforms-grid" role="list">
+      <div class="platform-card animate" data-platform="apps" role="listitem">
+        <div class="platform-icon" style="background:var(--red-soft);color:var(--red)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Apps de Dating</h3>
+        <div class="platforms-list">Tinder, Bumble, Hinge, Grindr</div>
+        <p class="platform-risk"></p>
+        <p class="platform-tip"></p>
+      </div>
+      <div class="platform-card animate" data-platform="social" role="listitem">
+        <div class="platform-icon" style="background:var(--orange-soft);color:var(--orange)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+        <h3>Redes Sociales</h3>
+        <div class="platforms-list">Instagram, Snapchat, TikTok, Facebook</div>
+        <p class="platform-risk"></p>
+        <p class="platform-tip"></p>
+      </div>
+      <div class="platform-card animate" data-platform="messaging" role="listitem">
+        <div class="platform-icon" style="background:var(--purple-soft);color:var(--purple)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>Mensajería</h3>
+        <div class="platforms-list">WhatsApp, Telegram, Signal</div>
+        <p class="platform-risk"></p>
+        <p class="platform-tip"></p>
+      </div>
+      <div class="platform-card animate" data-platform="gaming" role="listitem">
+        <div class="platform-icon" style="background:var(--blue-soft);color:var(--blue)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><path d="M17.32 5H6.68a4 4 0 00-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 003 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 019.828 16h4.344a2 2 0 011.414.586L17 18c.5.5 1 1 2 1a3 3 0 003-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0017.32 5z"/></svg></div>
+        <h3>Gaming y Comunidades</h3>
+        <div class="platforms-list">Discord, Twitch, Roblox</div>
+        <p class="platform-risk"></p>
+        <p class="platform-tip"></p>
+      </div>
+      <div class="platform-card animate" data-platform="forums" role="listitem">
+        <div class="platform-icon" style="background:var(--green-soft);color:var(--green)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <h3>Foros Anónimos</h3>
+        <div class="platforms-list">Reddit, 4chan, Telegram</div>
+        <p class="platform-risk"></p>
+        <p class="platform-tip"></p>
+      </div>
+      <div class="platform-card animate" data-platform="videocalls" role="listitem">
+        <div class="platform-icon" style="background:var(--rose-soft);color:var(--rose)" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+        <h3>Video Llamadas</h3>
+        <div class="platforms-list">Zoom, Google Meet, FaceTime</div>
+        <p class="platform-risk"></p>
+        <p class="platform-tip"></p>
+      </div>
     </div>
-    <div class="platform-card animate" data-platform="social">
-      <div class="platform-icon" style="background:var(--orange-soft);color:var(--orange)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
-      <h3>Redes Sociales</h3>
-      <div class="platforms-list">Instagram, Snapchat, TikTok, Facebook</div>
-      <p class="platform-risk"></p>
-      <p class="platform-tip"></p>
-    </div>
-    <div class="platform-card animate" data-platform="messaging">
-      <div class="platform-icon" style="background:var(--purple-soft);color:var(--purple)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-      <h3>Mensajería</h3>
-      <div class="platforms-list">WhatsApp, Telegram, Signal</div>
-      <p class="platform-risk"></p>
-      <p class="platform-tip"></p>
-    </div>
-    <div class="platform-card animate" data-platform="gaming">
-      <div class="platform-icon" style="background:var(--blue-soft);color:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><path d="M17.32 5H6.68a4 4 0 00-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 003 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 019.828 16h4.344a2 2 0 011.414.586L17 18c.5.5 1 1 2 1a3 3 0 003-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0017.32 5z"/></svg></div>
-      <h3>Gaming y Comunidades</h3>
-      <div class="platforms-list">Discord, Twitch, Roblox</div>
-      <p class="platform-risk"></p>
-      <p class="platform-tip"></p>
-    </div>
-    <div class="platform-card animate" data-platform="forums">
-      <div class="platform-icon" style="background:var(--green-soft);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
-      <h3>Foros Anónimos</h3>
-      <div class="platforms-list">Reddit, 4chan, Telegram</div>
-      <p class="platform-risk"></p>
-      <p class="platform-tip"></p>
-    </div>
-    <div class="platform-card animate" data-platform="videocalls">
-      <div class="platform-icon" style="background:var(--rose-soft);color:var(--rose)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
-      <h3>Video Llamadas</h3>
-      <div class="platforms-list">Zoom, Google Meet, FaceTime</div>
-      <p class="platform-risk"></p>
-      <p class="platform-tip"></p>
-    </div>
-  </div>
+  </section>
 
-  <h2 id="playbook" class="animate"><span class="num badge-amber">&#9670;</span> <span data-i18n="playbook.title">El Libro de Jugadas del Depredador</span></h2>
-  <div class="case-timeline animate">
-    <div class="case-step" data-playbook="1"><div class="case-num" style="background:linear-gradient(135deg,#b45309,#d97706)">1</div><div class="case-body"><h3>Contacto Inicial</h3><p>El depredador crea un perfil falso en redes sociales o apps de citas e inicia la conversación. Los perfiles están cuidadosamente elaborados para parecer atractivos y confiables, a menudo usando fotos generadas por IA o robadas.</p></div></div>
-    <div class="case-step" data-playbook="2"><div class="case-num" style="background:linear-gradient(135deg,#d97706,#f59e0b)">2</div><div class="case-body"><h3>Creación de Confianza (Grooming)</h3><p>Construye una relación durante días o semanas usando love bombing, empatía e intereses compartidos. Te lleva a plataformas privadas como WhatsApp, Telegram o Snapchat donde es más difícil rastrear el contenido.</p></div></div>
-    <div class="case-step" data-playbook="3"><div class="case-num" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)">3</div><div class="case-body"><h3>Elevar la Temperatura</h3><p>La conversación se vuelve sexual. Pide fotos o videos íntimos — a veces enviando los suyos primero para presionar con reciprocidad. Este es el momento crítico donde la excitación compromete más el juicio racional.</p></div></div>
-    <div class="case-step" data-playbook="4"><div class="case-num" style="background:linear-gradient(135deg,#2563eb,#3b82f6)">4</div><div class="case-body"><h3>La Trampa se Cierra</h3><p>Una vez que tienen tu contenido, comienzan las amenazas. Exigen dinero, más contenido o ambos — amenazando con exponerte a tu familia, amigos y empleadores. Una cuenta regresiva crea urgencia falsa.</p></div></div>
-    <div class="case-step" data-playbook="5"><div class="case-num" style="background:linear-gradient(135deg,#059669,#10b981)">5</div><div class="case-body"><h3>Explotación o Escape</h3><p>Si pagas, las demandas aumentan y tu información se vende a otros criminales. Este ciclo solo termina cuando bloqueas, denuncias y buscas ayuda. La vergüenza está diseñada — nunca es tu culpa.</p></div></div>
-  </div>
+  <!-- Playbook Section -->
+  <section aria-labelledby="playbook-heading">
+    <h2 id="playbook" class="animate"><span class="num badge-amber">&#9670;</span> <span data-i18n="playbook.title">El Libro de Jugadas del Depredador</span></h2>
+    <div class="case-timeline animate" role="list">
+      <div class="case-step" data-playbook="1" role="listitem"><div class="case-num" style="background:linear-gradient(135deg,#b45309,#d97706)" aria-hidden="true">1</div><div class="case-body"><h3>Contacto Inicial</h3><p>El depredador crea un perfil falso en redes sociales o apps de citas e inicia la conversación. Los perfiles están cuidadosamente elaborados para parecer atractivos y confiables, a menudo usando fotos generadas por IA o robadas.</p></div></div>
+      <div class="case-step" data-playbook="2" role="listitem"><div class="case-num" style="background:linear-gradient(135deg,#d97706,#f59e0b)" aria-hidden="true">2</div><div class="case-body"><h3>Creación de Confianza (Grooming)</h3><p>Construye una relación durante días o semanas usando love bombing, empatía e intereses compartidos. Te lleva a plataformas privadas como WhatsApp, Telegram o Snapchat donde es más difícil rastrear el contenido.</p></div></div>
+      <div class="case-step" data-playbook="3" role="listitem"><div class="case-num" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)" aria-hidden="true">3</div><div class="case-body"><h3>Elevar la Temperatura</h3><p>La conversación se vuelve sexual. Pide fotos o videos íntimos — a veces enviando los suyos primero para presionar con reciprocidad. Este es el momento crítico donde la excitación compromete más el juicio racional.</p></div></div>
+      <div class="case-step" data-playbook="4" role="listitem"><div class="case-num" style="background:linear-gradient(135deg,#2563eb,#3b82f6)" aria-hidden="true">4</div><div class="case-body"><h3>La Trampa se Cierra</h3><p>Una vez que tienen tu contenido, comienzan las amenazas. Exigen dinero, más contenido o ambos — amenazando con exponerte a tu familia, amigos y empleadores. Una cuenta regresiva crea urgencia falsa.</p></div></div>
+      <div class="case-step" data-playbook="5" role="listitem"><div class="case-num" style="background:linear-gradient(135deg,#059669,#10b981)" aria-hidden="true">5</div><div class="case-body"><h3>Explotación o Escape</h3><p>Si pagas, las demandas aumentan y tu información se vende a otros criminales. Este ciclo solo termina cuando bloqueas, denuncias y buscas ayuda. La vergüenza está diseñada — nunca es tu culpa.</p></div></div>
+    </div>
+  </section>
 
-  <div class="section-divider"></div>
-  <h2 id="deepfakes-section" class="animate"><span class="num badge-purple">5</span> <span data-i18n="deepfakes_section.title">Deepfakes y Contenido Generado por IA</span></h2>
-  <div class="legal-card animate">
-    <div class="legal-flag" data-i18n="deepfakes_section.flag">Amenaza Emergente</div>
-    <p data-i18n-html="deepfakes_section.desc">Los deepfakes son videos o imágenes creados con inteligencia artificial que parecen reales pero no lo son. Los depredadores los usan para crear contenido íntimo falso con tu rostro y amenazarte con publicarlo.</p>
-    <ul class="law-list">
-      <li data-i18n-html="deepfakes_section.what">Qué son: Videos o imágenes generados por IA que superponen tu rostro en contenido existente. No necesitan fotos íntimas reales — una sola foto de perfil puede ser suficiente para crear contenido falso convincente.</li>
-      <li data-i18n-html="deepfakes_section.how">Cómo se usan en sextorsión: Crean deepfakes usando fotos de tus redes sociales y te amenazan con publicarlos si no pagas. También clonan tu voz para hacer llamadas falsas a familiares.</li>
-      <li data-i18n-html="deepfakes_section.detect">Cómo detectarlos: Pelo irrevelante o borroso, ojos que no parpadean o tienen color inconsistente, movimientos extraños en el cuello, calidad inconsistente entre rostro y fondo, fundidos o transiciones antinaturales.</li>
-      <li data-i18n-html="deepfakes_section.protect">Cómo protegerse: Reduce fotos públicas con el rostro visible, no compartas fotos con iluminación frontal, usa marcas de agua en fotos personales, verifica identidad en videollamadas en vivo.</li>
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- Deepfakes Section -->
+  <section aria-labelledby="deepfakes-heading">
+    <h2 id="deepfakes-section" class="animate"><span class="num badge-purple">5</span> <span data-i18n="deepfakes_section.title">Deepfakes y Contenido Generado por IA</span></h2>
+    <div class="legal-card animate">
+      <div class="legal-flag" data-i18n="deepfakes_section.flag">Amenaza Emergente</div>
+      <p data-i18n-html="deepfakes_section.desc">Los deepfakes son videos o imágenes creados con inteligencia artificial que parecen reales pero no lo son. Los depredadores los usan para crear contenido íntimo falso con tu rostro y amenazarte con publicarlo.</p>
+      <ul class="law-list">
+        <li data-i18n-html="deepfakes_section.what">Qué son: Videos o imágenes generados por IA que superponen tu rostro en contenido existente. No necesitan fotos íntimas reales — una sola foto de perfil puede ser suficiente para crear contenido falso convincente.</li>
+        <li data-i18n-html="deepfakes_section.how">Cómo se usan en sextorsión: Crean deepfakes usando fotos de tus redes sociales y te amenazan con publicarlos si no pagas. También clonan tu voz para hacer llamadas falsas a familiares.</li>
+        <li data-i18n-html="deepfakes_section.detect">Cómo detectarlos: Pelo irrevelante o borroso, ojos que no parpadean o tienen color inconsistente, movimientos extraños en el cuello, calidad inconsistente entre rostro y fondo, fundidos o transiciones antinaturales.</li>
+        <li data-i18n-html="deepfakes_section.protect">Cómo protegerse: Reduce fotos públicas con el rostro visible, no compartas fotos con iluminación frontal, usa marcas de agua en fotos personales, verifica identidad en videollamadas en vivo.</li>
+      </ul>
+      <p data-i18n-html="deepfakes_section.legal">Marco legal: El TAKE IT DOWN Act (EE.UU., 2025) penaliza con hasta 2 años por compartir deepfakes y 18 meses por amenazar con ellos. Canadá (Bill C-16, 2026) aumentó la pena máxima a 10 años. Reino Unido (Crime and Policing Act 2026) penaliza crear o proveer generadores de deepfakes con hasta 3 años. La UE (Directiva 2024/1385) obliga a criminalizar deepfakes por 2027.</p>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- Protection Section -->
+  <section aria-labelledby="protect-heading">
+    <h2 id="protect" class="animate"><span class="num badge-green">6</span> <span data-i18n="protect.title">Cómo Protegerte</span></h2>
+    <ul class="protect-list" role="list">
+      <li class="animate" data-protect="pause" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Pausa</strong> Si estás excitado o alterado, no tomes decisiones financieras ni compartas contenido.</li>
+      <li class="animate" data-protect="anon" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Anonimato</strong> Mantén rostro, tatuajes y fondos fuera de contenido íntimo.</li>
+      <li class="animate" data-protect="accounts" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Cuentas separadas</strong> No vincules perfiles de citas a tus redes reales.</li>
+      <li class="animate" data-protect="verify" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Verifica</strong> Busca inversa de imágenes de perfil. Usan fotos robadas.</li>
+      <li class="animate" data-protect="paying" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Pagar no sirve</strong> Rara vez eliminan el material — lo venden o reutilizan.</li>
+      <li class="animate" data-protect="report" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Denuncia y bloquea</strong> No negocies. Reporta a policía y plataforma.</li>
+      <li class="animate" data-protect="support" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Apoyo</strong> Cyber Civil Rights Initiative y Thorn ayudan gratis.</li>
+      <li class="animate" data-protect="encrypt" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Cifra todo</strong> Usa Signal o Wickr. Activa mensajes que se autodestruyen.</li>
+      <li class="animate" data-protect="credit" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Congela tu crédito</strong> Evita que abran cuentas a tu nombre.</li>
+      <li class="animate" data-protect="laws" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Conoce las leyes</strong> Muchos países penalizan compartir imágenes íntimas sin consentimiento.</li>
+      <li class="animate" data-protect="identity" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Identidad separada</strong> Usa email, teléfono y redes distintas para citas.</li>
+      <li class="animate" data-protect="instinct" role="listitem"><span class="picon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Confía en tu instinto</strong> Si algo se siente mal, probablemente lo está.</li>
     </ul>
-    <p data-i18n-html="deepfakes_section.legal">Marco legal: El TAKE IT DOWN Act (EE.UU., 2025) penaliza con hasta 2 años por compartir deepfakes y 18 meses por amenazar con ellos. Canadá (Bill C-16, 2026) aumentó la pena máxima a 10 años. Reino Unido (Crime and Policing Act 2026) penaliza crear o proveer generadores de deepfakes con hasta 3 años. La UE (Directiva 2024/1385) obliga a criminalizar deepfakes por 2027.</p>
-  </div>
+  </section>
 
-  <div class="section-divider"></div>
-  <h2 id="protect" class="animate"><span class="num badge-green">6</span> <span data-i18n="protect.title">Cómo Protegerte</span></h2>
-  <ul class="protect-list">
-    <li class="animate" data-protect="pause"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Pausa</strong> Si estás excitado o alterado, no tomes decisiones financieras ni compartas contenido.</li>
-    <li class="animate" data-protect="anon"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Anonimato</strong> Mantén rostro, tatuajes y fondos fuera de contenido íntimo.</li>
-    <li class="animate" data-protect="accounts"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Cuentas separadas</strong> No vincules perfiles de citas a tus redes reales.</li>
-    <li class="animate" data-protect="verify"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Verifica</strong> Busca inversa de imágenes de perfil. Usan fotos robadas.</li>
-    <li class="animate" data-protect="paying"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Pagar no sirve</strong> Rara vez eliminan el material — lo venden o reutilizan.</li>
-    <li class="animate" data-protect="report"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Denuncia y bloquea</strong> No negocies. Reporta a policía y plataforma.</li>
-    <li class="animate" data-protect="support"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Apoyo</strong> Cyber Civil Rights Initiative y Thorn ayudan gratis.</li>
-    <li class="animate" data-protect="encrypt"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Cifra todo</strong> Usa Signal o Wickr. Activa mensajes que se autodestruyen.</li>
-    <li class="animate" data-protect="credit"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Congela tu crédito</strong> Evita que abran cuentas a tu nombre.</li>
-    <li class="animate" data-protect="laws"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Conoce las leyes</strong> Muchos países penalizan compartir imágenes íntimas sin consentimiento.</li>
-    <li class="animate" data-protect="identity"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Identidad separada</strong> Usa email, teléfono y redes distintas para citas.</li>
-    <li class="animate" data-protect="instinct"><span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Confía en tu instinto</strong> Si algo se siente mal, probablemente lo está.</li>
-  </ul>
+  <div class="section-divider" aria-hidden="true"></div>
 
-  <div class="section-divider"></div>
-  <h2 id="response" class="animate"><span class="num badge-blue">7</span> <span data-i18n="response.title">Si te Sucede a Ti</span></h2>
-  <div class="steps animate">
-    <ol>
-      <li data-response="1"><strong>Detén toda comunicación</strong> con el perpetrador.</li>
-      <li data-response="2"><strong>No pagues.</strong> Pagar financia el delito.</li>
-      <li data-response="3"><strong>Guarda evidencia</strong> — capturas, URLs, perfiles.</li>
-      <li data-response="4"><strong>Denuncia</strong> en cybertipline.org o ic3.gov (FBI).</li>
-      <li data-response="5"><strong>Contacta</strong> a un grupo local de apoyo.</li>
-      <li data-response="6"><strong>Habla con alguien de confianza.</strong> El aislamiento es su arma más poderosa.</li>
-    </ol>
-  </div>
+  <!-- Response Section -->
+  <section aria-labelledby="response-heading">
+    <h2 id="response" class="animate"><span class="num badge-blue">7</span> <span data-i18n="response.title">Si te Sucede a Ti</span></h2>
+    <div class="steps animate">
+      <ol>
+        <li data-response="1"><strong>Detén toda comunicación</strong> con el perpetrador.</li>
+        <li data-response="2"><strong>No pagues.</strong> Pagar financia el delito.</li>
+        <li data-response="3"><strong>Guarda evidencia</strong> — capturas, URLs, perfiles.</li>
+        <li data-response="4"><strong>Denuncia</strong> en cybertipline.org o ic3.gov (FBI).</li>
+        <li data-response="5"><strong>Contacta</strong> a un grupo local de apoyo.</li>
+        <li data-response="6"><strong>Habla con alguien de confianza.</strong> El aislamiento es su arma más poderosa.</li>
+      </ol>
+    </div>
+  </section>
 
-  <div class="section-divider"></div>
-  <h2 id="legal" class="animate"><span class="num badge-purple">8</span> <span data-i18n="legal.title">Antecedentes Legales</span></h2>
-  <div class="legal-card animate">
-    <div class="legal-flag" data-i18n="legal.flag">Leyes contra el Abuso Sexual Digital</div>
-    <p data-i18n-html="legal.desc">El abuso sexual basado en imágenes está tipificado como delito en la mayoría de jurisdicciones del mundo. El panorama legal ha evolucionado rápidamente, con muchos países aprobando leyes específicas en lugar de basarse en estatutos generales. Leyes clave:</p>
-    <ul class="law-list">
-      <li data-legal="us"></li>
-      <li data-legal="uk"></li>
-      <li data-legal="canada"></li>
-      <li data-legal="spain"></li>
-      <li data-legal="italy"></li>
-      <li data-legal="mexico"></li>
-      <li data-legal="argentina"></li>
-      <li data-legal="chile"></li>
-      <li data-legal="colombia"></li>
-      <li data-legal="peru"></li>
-      <li data-legal="international"></li>
-      <li data-legal="deepfakes"></li>
-    </ul>
-    <p data-legal="rights"></p>
-    <p style="margin-top:.5rem;font-size:.82rem;color:var(--text-muted);line-height:1.6" data-legal="important"></p>
-  </div>
+  <div class="section-divider" aria-hidden="true"></div>
 
-  <div class="section-divider"></div>
-  <h2 id="testimonials" class="animate"><span class="num badge-rose">9</span> <span data-i18n="testimonials.title">Historias Reales</span></h2>
+  <!-- Legal Section -->
+  <section aria-labelledby="legal-heading">
+    <h2 id="legal" class="animate"><span class="num badge-purple">8</span> <span data-i18n="legal.title">Antecedentes Legales</span></h2>
+    <div class="legal-card animate">
+      <div class="legal-flag" data-i18n="legal.flag">Leyes contra el Abuso Sexual Digital</div>
+      <p data-i18n-html="legal.desc">El abuso sexual basado en imágenes está tipificado como delito en la mayoría de jurisdicciones del mundo. El panorama legal ha evolucionado rápidamente, con muchos países aprobando leyes específicas en lugar de basarse en estatutos generales. Leyes clave:</p>
+      <ul class="law-list">
+        <li data-legal="us"></li>
+        <li data-legal="uk"></li>
+        <li data-legal="canada"></li>
+        <li data-legal="spain"></li>
+        <li data-legal="italy"></li>
+        <li data-legal="mexico"></li>
+        <li data-legal="argentina"></li>
+        <li data-legal="chile"></li>
+        <li data-legal="colombia"></li>
+        <li data-legal="peru"></li>
+        <li data-legal="brazil"></li>
+        <li data-legal="uruguay"></li>
+        <li data-legal="bolivia"></li>
+        <li data-legal="paraguay"></li>
+        <li data-legal="dominican_rep"></li>
+        <li data-legal="panama"></li>
+        <li data-legal="international"></li>
+        <li data-legal="deepfakes"></li>
+      </ul>
+      <p data-legal="rights"></p>
+      <p style="margin-top:.5rem;font-size:.82rem;color:var(--text-muted);line-height:1.6" data-legal="important"></p>
+    </div>
+  </section>
 
-  <div class="story-card badge-red animate" data-story="1">
-    <span class="story-badge">Activista</span>
-    <blockquote>Tenía 18 años cuando mi exnovio difundió un video íntimo que grabamos juntos. Se volvió viral en mi pueblo. Cuando intenté denunciar, me dijeron que no existía una ley que protegiera a las víctimas. Toqué fondo, intenté suicidarme tres veces. Pero con otras mujeres redactamos la Ley Olimpia en mi cochera. Hoy es ley nacional en México y la revista Time me nombró una de las 100 personas más influyentes del mundo.</blockquote>
-    <span class="attribution">Olimpia Coral Melo — Huauchinango, Puebla, México</span>
-    <a class="source-link" href="https://www.infobae.com/sociedad/2023/07/11/olimpia-coral-melo-la-joven-mexicana-que-impulso-la-ley-contra-la-violencia-digital-en-argentina-no-lo-puedes-ver-no-lo-puedes-tocar-no-te-penetran-pero-te-violan/" target="_blank" rel="noopener">Fuente: Infobae, 2023</a>
-  </div>
+  <div class="section-divider" aria-hidden="true"></div>
 
-  <div class="story-card badge-orange animate" data-story="2">
-    <span class="story-badge">Diputado</span>
-    <blockquote>Durante varios años fui extorsionado por un video íntimo que alguien hackeó cuando tenía 17 años. Me tuvieron secuestrado psicológica y mentalmente. En 2019 decidí hacer público mi caso y presentar una denuncia. Aunque no se encontró a los responsables, me dio libertad. Hoy soy diputado y he presentado iniciativas para tipificar el grooming como delito.</blockquote>
-    <span class="attribution">Jesús Elizondo — Monterrey, México</span>
-    <a class="source-link" href="https://ultimafuente.com/la-experiencia-de-jesus-elizondo-con-el-grooming-para-prevenir-futuros-sufrimientos/" target="_blank" rel="noopener">Fuente: Última Fuente, 2025</a>
-  </div>
+  <!-- Testimonials Section -->
+  <section aria-labelledby="testimonials-heading">
+    <h2 id="testimonials" class="animate"><span class="num badge-rose">9</span> <span data-i18n="testimonials.title">Historias Reales</span></h2>
 
-  <div class="story-card badge-purple animate" data-story="3">
-    <span class="story-badge">Docente</span>
-    <blockquote>Mi ex pareja difundió un video íntimo que había sido grabado durante nuestra relación. En plena pandemia de 2020, él y su nueva pareja lo viralizaron en redes sociales, grupos de WhatsApp y páginas pornográficas. Hasta mi hijo de 9 años recibió el video. Pero lo denuncié y logré una condena histórica en San Luis: dos años y tres meses de prisión efectiva.</blockquote>
-    <span class="attribution">Gabriela Fernández Aberastain — San Luis, Argentina</span>
-    <a class="source-link" href="https://www.clarin.com/sociedad/juicio-historico-sextorsion-san-luis-condenan-prision-efectiva-viralizar-video-hot-ex_0_s1dQieXHRR.html" target="_blank" rel="noopener">Fuente: Clarín, 2025</a>
-  </div>
+    <div class="story-card badge-red animate" data-story="1">
+      <span class="story-badge">Activista</span>
+      <blockquote>Tenía 18 años cuando mi exnovio difundió un video íntimo que grabamos juntos. Se volvió viral en mi pueblo. Cuando intenté denunciar, me dijeron que no existía una ley que protegiera a las víctimas. Toqué fondo, intenté suicidarme tres veces. Pero con otras mujeres redactamos la Ley Olimpia en mi cochera. Hoy es ley nacional en México y la revista Time me nombró una de las 100 personas más influyentes del mundo.</blockquote>
+      <span class="attribution">Olimpia Coral Melo — Huauchinango, Puebla, México</span>
+      <a class="source-link" href="https://www.infobae.com/sociedad/2023/07/11/olimpia-coral-melo-la-joven-mexicana-que-impulso-la-ley-contra-la-violencia-digital-en-argentina-no-lo-puedes-ver-no-lo-puedes-tocar-no-te-penetran-pero-te-violan/" target="_blank" rel="noopener noreferrer">Fuente: Infobae, 2023</a>
+    </div>
 
-  <div class="story-card badge-blue animate" data-story="4">
-    <span class="story-badge">Tallerista</span>
-    <blockquote>A los 15 años, un chico difundió mis fotos íntimas por toda la escuela. Empezaron a extorsionarme y hostigarme en redes. Recibía mensajes de hombres adultos que decían 'tengo esto, si no haces lo que quiero, se lo mando a tu mamá'. Tuve ataques de pánico, problemas de salud mental. A los 18 entendí que no era mi culpa.</blockquote>
-    <span class="attribution">Catalina Maluendez — Buenos Aires, Argentina</span>
-    <a class="source-link" href="https://tn.com.ar/sociedad/2026/02/08/a-los-15-anos-un-chico-difundio-sus-fotos-intimas-fue-hostigada-y-penso-en-matarse-ahora-cuenta-su-calvario/" target="_blank" rel="noopener">Fuente: TN, 2026</a>
-  </div>
+    <div class="story-card badge-orange animate" data-story="2">
+      <span class="story-badge">Diputado</span>
+      <blockquote>Durante varios años fui extorsionado por un video íntimo que alguien hackeó cuando tenía 17 años. Me tuvieron secuestrado psicológica y mentalmente. En 2019 decidí hacer público mi caso y presentar una denuncia. Aunque no se encontró a los responsables, me dio libertad. Hoy soy diputado y he presentado iniciativas para tipificar el grooming como delito.</blockquote>
+      <span class="attribution">Jesús Elizondo — Monterrey, México</span>
+      <a class="source-link" href="https://ultimafuente.com/la-experiencia-de-jesus-elizondo-con-el-grooming-para-prevenir-futuros-sufrimientos/" target="_blank" rel="noopener noreferrer">Fuente: Última Fuente, 2025</a>
+    </div>
 
-  <div class="story-card badge-green animate" data-story="5">
-    <span class="story-badge">Víctima</span>
-    <blockquote>Entré a una página de contenido para adultos y sin querer pinché un enlace. Al instante me llegó un mensaje de WhatsApp diciendo que había solicitado servicios sexuales y que debía pagar 1.200 euros o mi familia y yo pagaríamos las consecuencias. Me enviaron vídeos de torturas y asesinatos para aterrorizarme. Pagué por miedo, pero las amenazas no pararon. Cuando los bloqueé, fui a denunciar a la Policía. Detuvieron a dos hombres en Olot que estaban detrás de todo.</blockquote>
-    <span class="attribution">Víctima — Alicante, España (identidad protegida)</span>
-    <a class="source-link" href="https://www.abc.es/espana/cataluna/extorsionado-tras-acceder-web-porno-1200-euros-20241031121002-nt.html" target="_blank" rel="noopener">Fuente: ABC, 2024</a>
-  </div>
+    <div class="story-card badge-purple animate" data-story="3">
+      <span class="story-badge">Docente</span>
+      <blockquote>Mi ex pareja difundió un video íntimo que había sido grabado durante nuestra relación. En plena pandemia de 2020, él y su nueva pareja lo viralizaron en redes sociales, grupos de WhatsApp y páginas pornográficas. Hasta mi hijo de 9 años recibió el video. Pero lo denuncié y logré una condena histórica en San Luis: dos años y tres meses de prisión efectiva.</blockquote>
+      <span class="attribution">Gabriela Fernández Aberastain — San Luis, Argentina</span>
+      <a class="source-link" href="https://www.clarin.com/sociedad/juicio-historico-sextorsion-san-luis-condenan-prision-efectiva-viralizar-video-hot-ex_0_s1dQieXHRR.html" target="_blank" rel="noopener noreferrer">Fuente: Clarín, 2025</a>
+    </div>
 
-  <div class="story-card badge-rose animate" data-story="6">
-    <span class="story-badge">Menor</span>
-    <blockquote>Conocí a una chica por redes sociales. Después de enviarle fotos íntimas, empezaron las amenazas: me exigían 100 euros por Bizum a cambio de no difundirlas con mis contactos. Pagué, pero las amenazas no pararon. Mi familia y yo denunciamos a la Policía. Descubrieron que el perfil era falso y que había más de 100 víctimas en toda España, tres de ellas menores como yo.</blockquote>
-    <span class="attribution">Menor, 17 — Villa de Vallecas, Madrid, España (identidad protegida)</span>
-    <a class="source-link" href="https://www.abc.es/espana/madrid/gancho-fotos-sexuales-extorsion-100-menores-adultos-20251212114320-nt.html" target="_blank" rel="noopener">Fuente: ABC, 2025</a>
-  </div>
+    <div class="story-card badge-blue animate" data-story="4">
+      <span class="story-badge">Tallerista</span>
+      <blockquote>A los 15 años, un chico difundió mis fotos íntimas por toda la escuela. Empezaron a extorsionarme y hostigarme en redes. Recibía mensajes de hombres adultos que decían 'tengo esto, si no haces lo que quiero, se lo mando a tu mamá'. Tuve ataques de pánico, problemas de salud mental. A los 18 entendí que no era mi culpa.</blockquote>
+      <span class="attribution">Catalina Maluendez — Buenos Aires, Argentina</span>
+      <a class="source-link" href="https://tn.com.ar/sociedad/2026/02/08/a-los-15-anos-un-chico-difundio-sus-fotos-intimas-fue-hostigada-y-penso-en-matarse-ahora-cuenta-su-calvario/" target="_blank" rel="noopener noreferrer">Fuente: TN, 2026</a>
+    </div>
 
-</div>
+    <div class="story-card badge-green animate" data-story="5">
+      <span class="story-badge">Víctima</span>
+      <blockquote>Entré a una página de contenido para adultos y sin querer pinché un enlace. Al instante me llegó un mensaje de WhatsApp diciendo que había solicitado servicios sexuales y que debía pagar 1.200 euros o mi familia y yo pagaríamos las consecuencias. Me enviaron vídeos de torturas y asesinatos para aterrorizarme. Pagué por miedo, pero las amenazas no pararon. Cuando los bloqueé, fui a denunciar a la Policía. Detuvieron a dos hombres en Olot que estaban detrás de todo.</blockquote>
+      <span class="attribution">Víctima — Alicante, España (identidad protegida)</span>
+      <a class="source-link" href="https://www.abc.es/espana/cataluna/extorsionado-tras-acceder-web-porno-1200-euros-20241031121002-nt.html" target="_blank" rel="noopener noreferrer">Fuente: ABC, 2024</a>
+    </div>
 
-<div class="footer">
+    <div class="story-card badge-rose animate" data-story="6">
+      <span class="story-badge">Menor</span>
+      <blockquote>Conocí a una chica por redes sociales. Después de enviarle fotos íntimas, empezaron las amenazas: me exigían 100 euros por Bizum a cambio de no difundirlas con mis contactos. Pagué, pero las amenazas no pararon. Mi familia y yo denunciamos a la Policía. Descubrieron que el perfil era falso y que había más de 100 víctimas en toda España, tres de ellas menores como yo.</blockquote>
+      <span class="attribution">Menor, 17 — Villa de Vallecas, Madrid, España (identidad protegida)</span>
+      <a class="source-link" href="https://www.abc.es/espana/madrid/gancho-fotos-sexuales-extorsion-100-menores-adultos-20251212114320-nt.html" target="_blank" rel="noopener noreferrer">Fuente: ABC, 2025</a>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
   <span id="footer-source">Historias reales documentadas por medios periodísticos verificados.</span>
   <span id="footer-crisis">Si estás en crisis, busca ayuda de inmediato.</span>
-</div>
+</footer>
 
-<button class="crisis-btn" id="crisisBtn" aria-label="Crisis helplines" title="Crisis helplines">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+<!-- Crisis Button -->
+<button class="crisis-btn" id="crisisBtn" aria-label="Líneas de crisis" title="Líneas de crisis">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
 </button>
-<div class="crisis-popup" id="crisisPopup">
-  <button class="close-popup" id="closeCrisis" aria-label="Close">&times;</button>
-  <h4>&#128680; <span data-i18n="crisis.title">Crisis Helplines</span></h4>
+<div class="crisis-popup" id="crisisPopup" role="dialog" aria-label="Líneas de crisis">
+  <button class="close-popup" id="closeCrisis" aria-label="Cerrar">&times;</button>
+  <h4>&#128680; <span data-i18n="crisis.title">Líneas de Crisis</span></h4>
   <div id="crisisNumbers">
     <p><strong>ES:</strong> <a href="tel:024">024</a> Línea de la Vida</p>
     <p><strong>MX:</strong> <a href="tel:8002900024">800 290 0024</a> SAPTEL</p>
@@ -394,14 +516,17 @@
     <p><strong>CR:</strong> <a href="tel:128">128</a> ANAIS</p>
     <p><strong>GTM:</strong> <a href="tel:1716">1716</a> Línea de la Vida</p>
     <p><strong>RD:</strong> <a href="tel:8092001400">809-200-1400</a> Cuida tu Salud Mental</p>
-    <p><strong>Intl:</strong> <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a></p>
+    <p><strong>Intl:</strong> <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">findahelpline.com</a></p>
   </div>
 </div>
 
-<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
+<!-- Scripts -->
 <script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
